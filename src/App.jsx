@@ -5,6 +5,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 // page components
 // import Landing from './pages/Landing'
 import Signup from './pages/Signup/Signup'
+import Login from './pages/Login/Login'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -39,11 +40,11 @@ function App() {
               path="/signup"
               element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
             />
-            {/* <Route
+            <Route
               path="/login"
               element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
             />
-            <Route
+            {/* <Route
               path="/profiles"
               element={user ? <Profiles /> : <Navigate to="/login" />}
             />
