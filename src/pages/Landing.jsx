@@ -1,6 +1,6 @@
 function Greeter(props) {
   return (
-    <h1>Hello, friend</h1>
+    <h1>Welcome to Potluck Planner</h1>
   )
 }
 

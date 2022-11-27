@@ -1,11 +1,17 @@
 import './App.css'
-import Landing from './Landing'
+import Landing from './pages/Landing'
+import NavBar from './components/NavBar/NavBar'
 
 function App() {
   return (
-    <div>
-      <Landing />
-    </div>
+    <>
+      <nav>
+        <NavBar />
+      </nav>
+      <div>
+        <Landing />
+      </div>
+    </>
   )
 }
 
