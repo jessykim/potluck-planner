@@ -1,8 +1,33 @@
-import './App.css'
-import Landing from './pages/Landing'
+// npm modules
+import { useState } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+
+// page components
+// import Landing from './pages/Landing'
+
+// components
 import NavBar from './components/NavBar/NavBar'
 
+// services
+import * as authService from './services/authService'
+
+// styles
+import './App.css'
+
 function App() {
+  const navigate = useNavigate()
+  const [user, setUser] = useState(authService.getUser())
+
+  const handleLogout = () => {
+    authService.logout()
+		setUser(null)
+		navigate('/')
+  }
+
+  const handleSignupOrLogin = () => {
+    setUser(authService.getUser())
+  }
+
   return (
     <>
       <div className="App">
