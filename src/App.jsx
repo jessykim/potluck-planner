@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 // import Landing from './pages/Landing'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
+import Profiles from './pages/Profiles/Profiles'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -44,11 +45,11 @@ function App() {
               path="/login"
               element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
             />
-            {/* <Route
-              path="/profiles"
-              element={user ? <Profiles /> : <Navigate to="/login" />}
-            />
             <Route
+              path="/profiles"
+              element={user ? <Profiles /> : <navigate to="/login" />}
+            />
+            {/* <Route
               path="/changePassword"
               element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
             /> */}
