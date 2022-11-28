@@ -8,6 +8,7 @@ import Landing from './pages/Landing/Landing'
 import Login from './pages/Login/Login'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import AddPotluck from './pages/AddPotluck/AddPotluck'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -62,6 +63,10 @@ function App() {
             <Route
               path="/changePassword"
               element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <navigate to="/login" />}
+            />
+            <Route 
+              path="/add"
+              element={<AddPotluck />}
             />
           </Routes>
         </main>
