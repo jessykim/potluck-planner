@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 
 // components
 import NavBar from './components/NavBar/NavBar'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
@@ -52,7 +53,11 @@ function App() {
             />
             <Route
               path="/profiles"
-              element={user ? <Profiles /> : <navigate to="/login" />}
+              element={
+                <ProtectedRoute user={user}>
+                  <Profiles />
+                </ProtectedRoute>
+              }
             />
             <Route
               path="/changePassword"
