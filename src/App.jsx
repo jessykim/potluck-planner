@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // page components
@@ -16,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as potluckService from './services/potluckService'
 
 // styles
 import './App.css'
@@ -23,6 +24,15 @@ import './App.css'
 function App() {
   const navigate = useNavigate()
   const [user, setUser] = useState(authService.getUser())
+  const [potlucks, setPotlucks] = useState([])
+
+  useEffect(() => {
+    const fetchAllPotlucks = async () => {
+      const potluckData = await potluckService.getAll()
+      setPotlucks(potluckData)
+    }
+    fetchAllPotlucks()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
@@ -32,6 +42,12 @@ function App() {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleAddPotluck = async newPotluckData => {
+    const newPotluck = await potluckService.create(newPotluckData)
+    setPotlucks([...potlucks, newPotluck])
+    navigate('/potlucks')
   }
 
   return (
@@ -66,7 +82,7 @@ function App() {
             />
             <Route 
               path="/add"
-              element={<AddPotluck />}
+              element={<AddPotluck handleAddPotluck={handleAddPotluck} />}
             />
           </Routes>
         </main>
