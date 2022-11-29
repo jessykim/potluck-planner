@@ -1,7 +1,7 @@
-function Greeter(props) {
+const Landing = ({user}) => {
   return (
-    <h1>Welcome to Potluck Planner</h1>
+    <h1>Welcome to Potluck Planner!</h1>
   )
 }
 
-export default Greeter
+export default Landing

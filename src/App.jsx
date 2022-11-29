@@ -9,6 +9,7 @@ import Login from './pages/Login/Login'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import AddPotluck from './pages/AddPotluck/AddPotluck'
+import PotluckList from './pages/PotluckList/PotluckList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -17,6 +18,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as potluckService from './services/potluckService'
+// import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
@@ -28,11 +30,12 @@ function App() {
 
   useEffect(() => {
     const fetchAllPotlucks = async () => {
-      const potluckData = await potluckService.getAll()
+      const potluckData = await potluckService.index()
+      console.log('Potluck Data:', potluckData)
       setPotlucks(potluckData)
     }
-    fetchAllPotlucks()
-  }, [])
+    if (user) fetchAllPotlucks()
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
@@ -44,9 +47,9 @@ function App() {
     setUser(authService.getUser())
   }
 
-  const handleAddPotluck = async newPotluckData => {
-    const newPotluck = await potluckService.create(newPotluckData)
-    setPotlucks([...potlucks, newPotluck])
+  const handleAddPotluck = async (potluckData) => {
+    const newPotluck = await potluckService.create(potluckData)
+    setPotlucks([newPotluck, ...potlucks])
     navigate('/potlucks')
   }
 
@@ -81,8 +84,12 @@ function App() {
               element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <navigate to="/login" />}
             />
             <Route 
-              path="/add"
+              path="/potlucks/add"
               element={<AddPotluck handleAddPotluck={handleAddPotluck} />}
+            />
+            <Route 
+              path="/potlucks"
+              element={<PotluckList potlucks={potlucks} />}
             />
           </Routes>
         </main>

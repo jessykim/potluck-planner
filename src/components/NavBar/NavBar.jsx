@@ -7,10 +7,10 @@ const NavBar = ({ user, handleLogout }) => {
         Potluck Planner
         {user ?
           <nav>
-            <Link to="/">Potlucks</Link>
-            <Link to="/add">Add Potluck</Link>
+            <Link to="/potlucks">Potlucks</Link>
+            <Link to="/potlucks/add">Add Potluck</Link>
             <Link to="/profiles">Profiles</Link>
-            <Link to="" onClick={handleLogout}>Log Out</Link>
+            <Link to="/" onClick={handleLogout}>Log Out</Link>
             <Link to="/changePassword">Change Password</Link>
           </nav>
         :
