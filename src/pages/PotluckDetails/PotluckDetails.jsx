@@ -19,22 +19,23 @@ const PotluckDetails = (props) => {
 
   // Verify state with a console.log or React Dev Tools:
   console.log('Potluck State:', potluck)
+  console.log('Potluck Id:', id)
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          <h3>{props.potluck.name.toUpperCase()}</h3>
-          <h1>{props.potluck.name}</h1>
+          <h1>{potluck.name.toUpperCase()}</h1>
           <span>
-            {/* <AuthorInfo content={blog} /> */}
+            {potluck.host.name}
           </span>
         </header>
-        <p>{props.potluck.location}</p>
+        <p>{potluck.start}</p>
+        <p>{potluck.end}</p>
+        <p>{potluck.description}</p>
       </article>
       <section>
         <h1>Guests</h1>
-        <p>{props.potluck.name}</p>
       </section>
     </main>
   )
