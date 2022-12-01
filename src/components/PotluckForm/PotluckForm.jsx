@@ -17,6 +17,32 @@ const PotluckForm = (props) => {
 					/>
 				</div>
 				<div className="form-group mb-3">
+					<label htmlFor="start-input" className="form-label">
+						Begins
+					</label>
+					<input 
+						type="datetime-local"
+						id="start-input"
+						name="start"
+            value={props.potluckForm.start}
+            onChange={props.handleChange}
+						required
+					/>
+				</div>
+				<div className="form-group mb-3">
+					<label htmlFor="name-input" className="form-label">
+						Ends
+					</label>
+					<input 
+						type="datetime-local"
+						id="end-input"
+						name="end"
+            value={props.potluckForm.end}
+            onChange={props.handleChange}
+						required
+					/>
+				</div>
+				<div className="form-group mb-3">
 					<label htmlFor="location-input" className="form-label">
 						Location
 					</label>
@@ -40,7 +66,6 @@ const PotluckForm = (props) => {
 						name="description"
             value={props.potluckForm.description}
             onChange={props.handleChange}
-            placeholder="Please carpool!"
 					/>
 				</div>
 				<div className="d-grid">

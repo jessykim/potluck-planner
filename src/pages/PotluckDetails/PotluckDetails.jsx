@@ -22,7 +22,20 @@ const PotluckDetails = (props) => {
 
   return (
     <main className={styles.container}>
-      Details
+      <article>
+        <header>
+          <h3>{props.potluck.name.toUpperCase()}</h3>
+          <h1>{props.potluck.name}</h1>
+          <span>
+            {/* <AuthorInfo content={blog} /> */}
+          </span>
+        </header>
+        <p>{props.potluck.location}</p>
+      </article>
+      <section>
+        <h1>Guests</h1>
+        <p>{props.potluck.name}</p>
+      </section>
     </main>
   )
 }

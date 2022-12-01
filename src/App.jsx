@@ -98,8 +98,10 @@ function App() {
             <Route
               path="/potlucks/:id"
               element={
-                <PotluckDetails user={user} />
-              } 
+                <ProtectedRoute user={user}>
+                  <PotluckDetails user={user} />
+                </ProtectedRoute>
+              }
             />
           </Routes>
         </main>
