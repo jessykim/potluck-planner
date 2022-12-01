@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import AddPotluck from './pages/AddPotluck/AddPotluck'
 import PotluckList from './pages/PotluckList/PotluckList'
+import PotluckDetails from './pages/PotluckDetails/PotluckDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -31,7 +32,6 @@ function App() {
   useEffect(() => {
     const fetchAllPotlucks = async () => {
       const potluckData = await potluckService.index()
-      console.log('Potluck Data:', potluckData)
       setPotlucks(potluckData)
     }
     if (user) fetchAllPotlucks()
@@ -89,7 +89,17 @@ function App() {
             />
             <Route 
               path="/potlucks"
-              element={<PotluckList potlucks={potlucks} />}
+              element={
+                <ProtectedRoute user={user}>
+                  <PotluckList potlucks={potlucks} />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/potlucks/:id"
+              element={
+                <PotluckDetails user={user} />
+              } 
             />
           </Routes>
         </main>

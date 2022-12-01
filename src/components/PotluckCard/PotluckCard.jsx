@@ -12,12 +12,12 @@ const PotluckCard = ({ potluck }) => {
         <header>
           <span>
             <h1>{potluck.name}</h1>
-            <h2>{potluck.location}</h2>
+            {/* <h2>{potluck.location}</h2> */}
             {/* <Icon category={blog.category} /> */}
           </span>
           {/* <AuthorInfo content={blog} /> */}
         </header>
-        {/* <p>{potluck.description}</p> */}
+        <p>{potluck.description}</p>
       </article>
     </Link>
   )

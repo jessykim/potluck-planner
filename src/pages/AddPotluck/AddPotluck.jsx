@@ -4,8 +4,11 @@ import PotluckForm from "../../components/PotluckForm/PotluckForm"
 function AddPotluck(props) {
   const [potluckForm, setPotluckForm] = useState({
     name: '',
+    start: '',
+    end: '',
     location: '',
     description: '',
+    
   })
   
   const handleChange = ({ target }) => {

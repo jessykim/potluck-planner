@@ -1,9 +1,8 @@
-import PotluckCard from "../../components/PotluckCard/PotluckCard"
 import styles from './PotluckList.module.css'
+import PotluckCard from "../../components/PotluckCard/PotluckCard"
 
 const PotluckList = (props) => {
-  // const potlucks = props.potlucks
-  // console.log(potlucks)
+  // console.log('PotluckList props:', props)
   return (
     <main className={styles.container}>
       {props.potlucks.map((potluck) => (
