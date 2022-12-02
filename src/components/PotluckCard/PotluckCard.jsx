@@ -6,6 +6,7 @@ import styles from './PotluckCard.module.css'
 // import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const PotluckCard = ({ potluck }) => {
+  // console.log(potluck._id)
   return (
     <Link to={`/potlucks/${potluck._id}`}>
       <article className={styles.container}>
@@ -17,7 +18,7 @@ const PotluckCard = ({ potluck }) => {
           </span>
           {/* <AuthorInfo content={blog} /> */}
         </header>
-        <p>{potluck.description}</p>
+        <p>{potluck.start}</p>
       </article>
     </Link>
   )

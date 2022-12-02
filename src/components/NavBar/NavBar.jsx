@@ -1,27 +1,30 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"
+import styles from './NavBar.module.css'
 
 const NavBar = ({ user, handleLogout }) => {
-  return (
-    <>
-      <header className="App-header">
-        Potluck Planner
-        {user ?
-          <nav>
-            <Link to="/potlucks">Potlucks</Link>
-            <Link to="/potlucks/add">Add Potluck</Link>
-            <Link to="/profiles">Profiles</Link>
-            <Link to="/" onClick={handleLogout}>Log Out</Link>
-            <Link to="/changePassword">Change Password</Link>
-          </nav>
-        :
-          <nav>
-            <Link to="/login">Log In</Link>
-            <Link to="/signup">Sign Up</Link>
-          </nav>
-        }
-      </header>
-    </>
-  );
-};
+  const publicLinks = (
+    <ul>
+      <li><NavLink to="/login">LOG IN</NavLink></li>
+      <li><NavLink to="/signup">SIGN UP</NavLink></li>
+    </ul>
+  )
 
-export default NavBar;
+  const protectedLinks = (
+    <ul>
+      <li><NavLink to="/logout" onClick={handleLogout}>LOG OUT</NavLink></li>
+      <li><NavLink to="/changePassword" onClick={handleLogout}>Change Password</NavLink></li>
+      <li><NavLink to="/potlucks">Potlucks</NavLink></li>
+      <li><NavLink to="/potlucks/add">Add Potluck</NavLink></li>
+      <li><NavLink to="/profiles">Profiles</NavLink></li>
+    </ul>
+  )
+
+  return (
+    <nav className={styles.container}>
+      <NavLink to={'/'}></NavLink>
+      {user ? protectedLinks : publicLinks}
+    </nav>
+  )
+}
+
+export default NavBar
