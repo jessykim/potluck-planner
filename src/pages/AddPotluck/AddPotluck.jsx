@@ -7,8 +7,7 @@ function AddPotluck(props) {
     start: '',
     end: '',
     location: '',
-    description: '',
-    
+    description: ''
   })
   
   const handleChange = ({ target }) => {

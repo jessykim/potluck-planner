@@ -11,15 +11,15 @@ const PotluckDetails = (props) => {
 
   useEffect(() => {
     const fetchPotluck = async () => {
-      const data = await potluckService.show(id)
-      setPotluck(data)
+      const potluckData = await potluckService.show(id)
+      setPotluck(potluckData)
     }
     fetchPotluck()
   }, [id])
 
   // Verify state with a console.log or React Dev Tools:
-  console.log('Potluck State:', potluck)
-  console.log('Potluck Id:', id)
+  // console.log('Potluck State:', potluck)
+  // console.log('Potluck Id:', id)
 
   return (
     <main className={styles.container}>
