@@ -2,6 +2,9 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import styles from './PotluckDetails.module.css'
 
+// Components
+import Loading from '../Loading/Loading'
+
 // Services
 import * as potluckService from '../../services/potluckService'
 
@@ -11,21 +14,19 @@ const PotluckDetails = (props) => {
 
   useEffect(() => {
     const fetchPotluck = async () => {
-      const potluckData = await potluckService.show(id)
-      setPotluck(potluckData)
+      const data = await potluckService.show(id)
+      setPotluck(data)
     }
     fetchPotluck()
   }, [id])
 
-  // Verify state with a console.log or React Dev Tools:
-  // console.log('Potluck State:', potluck)
-  // console.log('Potluck Id:', id)
+  if (!potluck) return <Loading />
 
   return (
     <main className={styles.container}>
       <article>
         <header>
-          <h1>{potluck.name.toUpperCase()}</h1>
+          <h1>{potluck.name}</h1>
           <span>
             {potluck.host.name}
           </span>

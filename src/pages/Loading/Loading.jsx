@@ -1,0 +1,13 @@
+import styles from './Loading.module.css'
+// import LoadingIcon from '../../assets/branding/loading.svg'
+
+const Loading = () => {
+  return (
+    <main className={styles.container}>
+      <h1>Loading...</h1>
+      {/* <img src={LoadingIcon} alt="A cute owl" /> */}
+    </main>
+  )
+}
+
+export default Loading
