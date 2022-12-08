@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import styles from './PotluckDetails.module.css'
 
 // Components
@@ -38,6 +38,14 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Guests</h1>
       </section>
+      <span>
+        {potluck.host._id === props.user.profile &&
+          <>
+            <Link to={`/potlucks/${id}/edit`} state={potluck}>Edit</Link>
+            <button>Delete</button>
+          </>
+        }
+      </span>
     </main>
   )
 }

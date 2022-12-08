@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import AddPotluck from './pages/AddPotluck/AddPotluck'
 import PotluckList from './pages/PotluckList/PotluckList'
 import PotluckDetails from './pages/PotluckDetails/PotluckDetails'
+import EditPotluck from './pages/EditPotluck/EditPotluck'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -43,6 +44,12 @@ function App() {
   const handleAddPotluck = async (potluckData) => {
     const newPotluck = await potluckService.create(potluckData)
     setPotlucks([newPotluck, ...potlucks])
+    navigate('/potlucks')
+  }
+
+  const handleUpdatePotluck = async (potluckData) => {
+    const updatedPotluck = await potluckService.update(potluckData)
+    setPotlucks(potlucks.map((p) => potluckData._id === p._id ? updatedPotluck : p))
     navigate('/potlucks')
   }
 
@@ -91,6 +98,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <PotluckDetails user={user} />
+            </ProtectedRoute>
+          }
+        />
+        <Route 
+          path="/potlucks/:id/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditPotluck handleUpdatePotluck={handleUpdatePotluck} />
             </ProtectedRoute>
           }
         />

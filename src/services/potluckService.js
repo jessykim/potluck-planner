@@ -41,8 +41,25 @@ const create = async (potluckData) => {
   }
 }
 
+const update = async (potluckData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(potluckData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
-  show
+  show,
+  update
 }
