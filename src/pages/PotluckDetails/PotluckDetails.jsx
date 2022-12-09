@@ -42,7 +42,7 @@ const PotluckDetails = (props) => {
         {potluck.host._id === props.user.profile &&
           <>
             <Link to={`/potlucks/${id}/edit`} state={potluck}>Edit</Link>
-            <button>Delete</button>
+            <button onClick={() => props.handleDeletePotluck(id)}>Delete</button>
           </>
         }
       </span>

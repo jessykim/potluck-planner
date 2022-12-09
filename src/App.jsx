@@ -53,6 +53,12 @@ function App() {
     navigate('/potlucks')
   }
 
+  const handleDeletePotluck = async (id) => {
+    const deletedPotluck = await potluckService.deletePotluck(id)
+    setPotlucks(potlucks.filter(p => p._id !== deletedPotluck._id))
+    navigate('/potlucks')
+  }
+
   useEffect(() => {
     const fetchAllPotlucks = async () => {
       const potluckData = await potluckService.index()
@@ -97,7 +103,7 @@ function App() {
           path="/potlucks/:id"
           element={
             <ProtectedRoute user={user}>
-              <PotluckDetails user={user} />
+              <PotluckDetails user={user} handleDeletePotluck={handleDeletePotluck} />
             </ProtectedRoute>
           }
         />
