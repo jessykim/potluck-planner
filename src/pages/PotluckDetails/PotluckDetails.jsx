@@ -11,15 +11,17 @@ import Rsvps from "../../components/Rsvps/Rsvps"
 import * as potluckService from '../../services/potluckService'
 
 const PotluckDetails = (props) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const { id } = useParams()
   const [potluck, setPotluck] = useState(null)
 
   const handleAddRsvp = async (rsvpData) => {
     const newRsvp = await potluckService.createRsvp(id, rsvpData)
     setPotluck({ ...potluck, rsvps: [...potluck.rsvps, newRsvp]})
-    navigate(`/potlucks/${id}`)
+    // navigate(`/potlucks/${id}`)
   }
+
+  // console.log(potluck.rsvps)
 
   useEffect(() => {
     const fetchPotluck = async () => {
