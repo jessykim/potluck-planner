@@ -7,18 +7,19 @@ import styles from './PotluckCard.module.css'
 
 const PotluckCard = ({ potluck }) => {
   // console.log(potluck._id)
+  const start = new Date(potluck.start).toLocaleDateString()
+  const starttime = new Date(potluck.start).toLocaleTimeString()
+
   return (
     <Link to={`/potlucks/${potluck._id}`}>
       <article className={styles.container}>
         <header>
           <span>
             <h1>{potluck.name}</h1>
-            {/* <h2>{potluck.location}</h2> */}
-            {/* <Icon category={blog.category} /> */}
           </span>
-          {/* <AuthorInfo content={blog} /> */}
         </header>
-        <p>{potluck.start}</p>
+        <p>{start} at {starttime}</p>
+        <p>{potluck.location}</p>
       </article>
     </Link>
   )

@@ -33,7 +33,7 @@ const PotluckDetails = (props) => {
   }, [id])
   
   if (!potluck) return <Loading />
-  
+
   const start = new Date(potluck.start).toLocaleDateString()
   const starttime = new Date(potluck.start).toLocaleTimeString()
   const end = new Date(potluck.end).toLocaleDateString()
@@ -48,8 +48,8 @@ const PotluckDetails = (props) => {
             {potluck.host.name}
           </span>
         </header>
-        <p>{start} at {starttime}</p>
-        <p>{end} at  {endtime}</p>
+        <p>Begins: {start} at {starttime}</p>
+        <p>Ends: {end} at  {endtime}</p>
         <p>{potluck.description}</p>
       </article>
       <span>
