@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, Link, useNavigate } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import styles from './PotluckDetails.module.css'
 
 // Components
@@ -15,14 +15,15 @@ const PotluckDetails = (props) => {
   const { id } = useParams()
   const [potluck, setPotluck] = useState(null)
 
+  
   const handleAddRsvp = async (rsvpData) => {
     const newRsvp = await potluckService.createRsvp(id, rsvpData)
     setPotluck({ ...potluck, rsvps: [...potluck.rsvps, newRsvp]})
     // navigate(`/potlucks/${id}`)
   }
-
+  
   // console.log(potluck.rsvps)
-
+  
   useEffect(() => {
     const fetchPotluck = async () => {
       const data = await potluckService.show(id)
@@ -30,8 +31,13 @@ const PotluckDetails = (props) => {
     }
     fetchPotluck()
   }, [id])
-
+  
   if (!potluck) return <Loading />
+  
+  const start = new Date(potluck.start).toLocaleDateString()
+  const starttime = new Date(potluck.start).toLocaleTimeString()
+  const end = new Date(potluck.end).toLocaleDateString()
+  const endtime = new Date(potluck.end).toLocaleTimeString()
 
   return (
     <main className={styles.container}>
@@ -42,8 +48,8 @@ const PotluckDetails = (props) => {
             {potluck.host.name}
           </span>
         </header>
-        <p>{potluck.start}</p>
-        <p>{potluck.end}</p>
+        <p>{start} at {starttime}</p>
+        <p>{end} at  {endtime}</p>
         <p>{potluck.description}</p>
       </article>
       <span>
