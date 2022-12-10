@@ -71,10 +71,27 @@ const deletePotluck = async (id) => {
   }
 }
 
+const createRsvp = async (id, rsvpData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/rsvps`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(rsvpData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
   show,
   update,
-  deletePotluck
+  deletePotluck,
+  createRsvp,
 }
