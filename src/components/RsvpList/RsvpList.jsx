@@ -1,6 +1,6 @@
 import RsvpCard from '../RsvpCard/RsvpCard'
 
-const Rsvps = (props) => {
+const RsvpList = (props) => {
   if (!props.rsvps) return <h4>No Reservations</h4>
 
   return (
@@ -16,4 +16,4 @@ const Rsvps = (props) => {
   )
 }
 
-export default Rsvps
+export default RsvpList

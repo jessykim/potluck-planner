@@ -1,5 +1,4 @@
 const RsvpCard = ({ rsvp, user }) => {
-  // console.log(rsvp.party)
   return (
     <article>
       <p>{user.name}</p>

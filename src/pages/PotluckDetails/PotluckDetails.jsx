@@ -5,8 +5,9 @@ import styles from './PotluckDetails.module.css'
 // Components
 import Loading from '../Loading/Loading'
 import RsvpForm from '../../components/RsvpForm/RsvpForm'
-import Rsvps from "../../components/Rsvps/Rsvps"
+import RsvpList from "../../components/RsvpList/RsvpList"
 import FoodForm from "../../components/FoodForm/FoodForm"
+import FoodList from "../../components/FoodList/FoodList"
 
 // Services
 import * as potluckService from '../../services/potluckService'
@@ -66,11 +67,12 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Guest List</h1>
         <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
-        <Rsvps rsvps={potluck.rsvps} user={props.user} />
+        <RsvpList rsvps={potluck.rsvps} user={props.user} />
       </section>
       <section>
         <h1>Food List</h1>
         <FoodForm handleAddFood={handleAddFood} user={props.user} />
+        <FoodList foods={foods} user={props.user} />
       </section>
     </main>
   )
