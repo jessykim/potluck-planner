@@ -87,6 +87,22 @@ const createRsvp = async (id, rsvpData) => {
   }
 }
 
+const createFood = async (id, foodData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/foods`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(foodData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -94,4 +110,5 @@ export {
   update,
   deletePotluck,
   createRsvp,
+  createFood
 }

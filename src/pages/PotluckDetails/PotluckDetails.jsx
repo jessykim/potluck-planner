@@ -6,6 +6,7 @@ import styles from './PotluckDetails.module.css'
 import Loading from '../Loading/Loading'
 import RsvpForm from '../../components/RsvpForm/RsvpForm'
 import Rsvps from "../../components/Rsvps/Rsvps"
+import FoodForm from "../../components/FoodForm/FoodForm"
 
 // Services
 import * as potluckService from '../../services/potluckService'
@@ -14,15 +15,17 @@ const PotluckDetails = (props) => {
   // const navigate = useNavigate()
   const { id } = useParams()
   const [potluck, setPotluck] = useState(null)
+  const [foods, setFoods] = useState([])
 
-  
   const handleAddRsvp = async (rsvpData) => {
     const newRsvp = await potluckService.createRsvp(id, rsvpData)
     setPotluck({ ...potluck, rsvps: [...potluck.rsvps, newRsvp]})
-    // navigate(`/potlucks/${id}`)
   }
-  
-  // console.log(potluck.rsvps)
+
+  const handleAddFood = async (foodData) => {
+    const newFood = await potluckService.createFood(id, foodData)
+    setFoods([newFood, ...foods])
+  }
   
   useEffect(() => {
     const fetchPotluck = async () => {
@@ -66,7 +69,8 @@ const PotluckDetails = (props) => {
         <Rsvps rsvps={potluck.rsvps} user={props.user} />
       </section>
       <section>
-
+        <h1>Food List</h1>
+        <FoodForm handleAddFood={handleAddFood} user={props.user} />
       </section>
     </main>
   )
