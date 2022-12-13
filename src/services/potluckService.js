@@ -103,6 +103,20 @@ const updateRsvp = async (potluckId, rsvpId, rsvpData) => {
   }
 }
 
+const deleteRsvp = async (potluckId, rsvpId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckId}/rsvps/${rsvpId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const createFood = async (id, foodData) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}/foods`, {
@@ -127,5 +141,6 @@ export {
   deletePotluck,
   createRsvp,
   updateRsvp,
+  deleteRsvp,
   createFood
 }

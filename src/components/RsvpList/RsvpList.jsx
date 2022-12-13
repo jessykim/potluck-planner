@@ -11,6 +11,7 @@ const RsvpList = (props) => {
           rsvp={rsvp}
           user={props.user}
           potluckId={props.potluckId}
+          handleDeleteRsvp={props.handleDeleteRsvp}
         />
       ))}
     </>

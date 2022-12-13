@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const RsvpCard = ({ rsvp, user, potluckId }) => {
+const RsvpCard = ({ rsvp, user, potluckId, handleDeleteRsvp }) => {
   // console.log(rsvp.guest)
   // console.log(user.profile)
   console.log(rsvp._id)
@@ -19,7 +19,7 @@ const RsvpCard = ({ rsvp, user, potluckId }) => {
             >
               Edit
             </Link>
-            <button>Delete</button>
+            <button onClick={() => handleDeleteRsvp(potluckId, rsvp._id)}>Delete</button>
           </>
         }
       </span>

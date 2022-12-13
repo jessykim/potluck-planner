@@ -23,6 +23,11 @@ const PotluckDetails = (props) => {
     setPotluck({ ...potluck, rsvps: [...potluck.rsvps, newRsvp]})
   }
 
+  const handleDeleteRsvp = async (potluckId, rsvpId) => {
+    await potluckService.deleteRsvp(potluckId, rsvpId)
+    setPotluck({ ...potluck, rsvps: potluck.rsvps.filter((rsvp) => rsvp._id !== rsvpId)})
+  }
+
   const handleAddFood = async (foodData) => {
     const newFood = await potluckService.createFood(id, foodData)
     setFoods([newFood, ...foods])
@@ -67,7 +72,7 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Guest List</h1>
         <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
-        <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} />
+        <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
       </section>
       <section>
         <h1>Food List</h1>
