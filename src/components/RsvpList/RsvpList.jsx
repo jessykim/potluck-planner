@@ -10,6 +10,7 @@ const RsvpList = (props) => {
           key={rsvp._id}
           rsvp={rsvp}
           user={props.user}
+          potluckId={props.potluckId}
         />
       ))}
     </>

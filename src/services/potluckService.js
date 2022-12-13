@@ -87,6 +87,22 @@ const createRsvp = async (id, rsvpData) => {
   }
 }
 
+const updateRsvp = async (potluckId, rsvpId, rsvpData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckId}/rsvps/${rsvpId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(rsvpData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const createFood = async (id, foodData) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}/foods`, {
@@ -110,5 +126,6 @@ export {
   update,
   deletePotluck,
   createRsvp,
+  updateRsvp,
   createFood
 }

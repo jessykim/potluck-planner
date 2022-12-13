@@ -67,7 +67,7 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Guest List</h1>
         <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
-        <RsvpList rsvps={potluck.rsvps} user={props.user} />
+        <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} />
       </section>
       <section>
         <h1>Food List</h1>
