@@ -159,6 +159,21 @@ const updateFood = async (potluckId, foodId, foodData) => {
   }
 }
 
+const deleteFood = async (potluckId, foodId) => {
+  console.log(foodId, 'food id')
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckId}/foods/${foodId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -170,5 +185,6 @@ export {
   deleteRsvp,
   createFood,
   foodIndex,
-  updateFood
+  updateFood,
+  deleteFood
 }

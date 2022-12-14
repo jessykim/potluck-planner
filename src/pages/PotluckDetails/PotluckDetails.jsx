@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 import styles from './PotluckDetails.module.css'
 
 // Components
@@ -13,7 +13,7 @@ import FoodList from "../../components/FoodList/FoodList"
 import * as potluckService from '../../services/potluckService'
 
 const PotluckDetails = (props) => {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const { id } = useParams()
   const [potluck, setPotluck] = useState(null)
   const [foods, setFoods] = useState([])
@@ -31,6 +31,12 @@ const PotluckDetails = (props) => {
   const handleAddFood = async (foodData) => {
     const newFood = await potluckService.createFood(id, foodData)
     setFoods([newFood, ...foods])
+  }
+
+  const handleDeleteFood = async (potluckId, foodId) => {
+    const deletedFood = await potluckService.deleteFood(potluckId, foodId)
+    setFoods(foods.filter((food) => food._id !== deletedFood._id))
+    navigate(`/potlucks/${potluckId}`)
   }
   
   useEffect(() => {
@@ -79,7 +85,7 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Food List</h1>
         <FoodForm handleAddFood={handleAddFood} user={props.user} />
-        <FoodList foods={foods} user={props.user} potluckId={id} />
+        <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
       </section>
     </main>
   )

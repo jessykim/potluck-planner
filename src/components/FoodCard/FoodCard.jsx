@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const FoodCard = ({ food, user, potluckId }) => {
+const FoodCard = ({ food, user, potluckId, handleDeleteFood }) => {
   // console.log(user.profile)
   return (
     <article>
@@ -17,7 +17,7 @@ const FoodCard = ({ food, user, potluckId }) => {
             >
               Edit
             </Link>
-            {/* <button onClick={() => handleDeleteRsvp(potluckId, rsvp._id)}>Delete</button> */}
+            <button onClick={() => handleDeleteFood(potluckId, food._id)}>Delete</button>
           </>
         }
       </span>
