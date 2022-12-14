@@ -8,6 +8,7 @@ import RsvpForm from '../../components/RsvpForm/RsvpForm'
 import RsvpList from "../../components/RsvpList/RsvpList"
 import FoodForm from "../../components/FoodForm/FoodForm"
 import FoodList from "../../components/FoodList/FoodList"
+import DrinkForm from "../../components/DrinkForm/DrinkForm"
 
 // Services
 import * as potluckService from '../../services/potluckService'
@@ -17,6 +18,7 @@ const PotluckDetails = (props) => {
   const { id } = useParams()
   const [potluck, setPotluck] = useState(null)
   const [foods, setFoods] = useState([])
+  const [drinks, setDrinks] = useState([])
   
   const handleAddRsvp = async (rsvpData) => {
     const newRsvp = await potluckService.createRsvp(id, rsvpData)
@@ -31,6 +33,11 @@ const PotluckDetails = (props) => {
   const handleAddFood = async (foodData) => {
     const newFood = await potluckService.createFood(id, foodData)
     setFoods([newFood, ...foods])
+  }
+
+  const handleAddDrink = async (drinkData) => {
+    const newDrink = await potluckService.createDrink(id, drinkData)
+    setDrinks([newDrink, ...drinks])
   }
 
   const handleDeleteFood = async (potluckId, foodId) => {
@@ -85,6 +92,11 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Food List</h1>
         <FoodForm handleAddFood={handleAddFood} user={props.user} />
+        <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
+      </section>
+      <section>
+        <h1>Drink List</h1>
+        <DrinkForm handleAddDrink={handleAddDrink} user={props.user} />
         <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
       </section>
     </main>
