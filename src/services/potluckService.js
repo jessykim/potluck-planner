@@ -160,7 +160,6 @@ const updateFood = async (potluckId, foodId, foodData) => {
 }
 
 const deleteFood = async (potluckId, foodId) => {
-  console.log(foodId, 'food id')
   try {
     const res = await fetch(`${BASE_URL}/${potluckId}/foods/${foodId}`, {
       method: 'DELETE',
@@ -217,6 +216,20 @@ const updateDrink = async (potluckId, drinkId, drinkData) => {
   }
 }
 
+const deleteDrink = async (potluckId, drinkId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckId}/drinks/${drinkId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -232,5 +245,6 @@ export {
   deleteFood,
   createDrink,
   drinkIndex,
-  updateDrink
+  updateDrink,
+  deleteDrink
 }
