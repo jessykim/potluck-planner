@@ -11,6 +11,7 @@ import FoodList from "../../components/FoodList/FoodList"
 import DrinkForm from "../../components/DrinkForm/DrinkForm"
 import DrinkList from "../../components/DrinkList/DrinkList"
 import ItemForm from "../../components/ItemForm/ItemForm"
+import ItemList from "../../components/ItemList/ItemList"
 
 // Services
 import * as potluckService from '../../services/potluckService'
@@ -68,9 +69,11 @@ const PotluckDetails = (props) => {
       setFoods(foodData)
       const drinkData = await potluckService.drinkIndex(id)
       setDrinks(drinkData)
+      const itemData = await potluckService.itemIndex(id)
+      setItems(itemData)
     }
     fetchPotluck()
-  }, [id, setFoods, setDrinks])
+  }, [id, setFoods, setDrinks, setItems])
   
   if (!potluck) return <Loading />
 
@@ -118,7 +121,7 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Item List</h1>
         <ItemForm handleAddItem={handleAddItem} user={props.user} />
-        {/* <DrinkList drinks={drinks} user={props.user} potluckId={id} handleDeleteDrink={handleDeleteDrink} /> */}
+        <ItemList items={items} user={props.user} potluckId={id} />
       </section>
     </main>
   )

@@ -1,3 +1,5 @@
+import ItemCard from "../ItemCard/ItemCard"
+
 const ItemList = (props) => {
   if (!props.items) return <h4>No Item Added</h4>
 
