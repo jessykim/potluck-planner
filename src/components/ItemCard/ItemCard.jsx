@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const ItemCard = ({ item, user, potluckId }) => {
   return (
@@ -10,12 +10,12 @@ const ItemCard = ({ item, user, potluckId }) => {
       <span>
         {item.provider === user.profile &&
           <>
-            {/* <Link 
+            <Link 
               to={`/potlucks/${potluckId}/items/${item._id}`} 
               state={item}
             >
               Edit
-            </Link> */}
+            </Link>
             {/* <button onClick={() => handleDeleteItem(potluckId, item._id)}>Delete</button> */}
           </>
         }
