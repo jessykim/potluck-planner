@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 const FoodCard = ({ food, user, potluckId }) => {
-  console.log(user.profile)
+  // console.log(user.profile)
   return (
     <article>
       <p>{user.name}</p>

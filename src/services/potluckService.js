@@ -143,6 +143,22 @@ const foodIndex = async (id) => {
   }
 }
 
+const updateFood = async (potluckId, foodId, foodData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckId}/foods/${foodId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(foodData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -153,5 +169,6 @@ export {
   updateRsvp,
   deleteRsvp,
   createFood,
-  foodIndex
+  foodIndex,
+  updateFood
 }

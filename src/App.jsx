@@ -14,6 +14,7 @@ import PotluckList from './pages/PotluckList/PotluckList'
 import PotluckDetails from './pages/PotluckDetails/PotluckDetails'
 import EditPotluck from './pages/EditPotluck/EditPotluck'
 import EditRsvp from './pages/EditRsvp/EditRsvp'
+import EditFood from './pages/EditFood/EditFood'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -121,6 +122,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditRsvp user={user} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/potlucks/:potluckId/foods/:foodId"
+          element={
+            <ProtectedRoute user={user}>
+              <EditFood user={user} />
             </ProtectedRoute>
           }
         />
