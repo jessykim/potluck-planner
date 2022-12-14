@@ -1,7 +1,6 @@
 import FoodCard from '../FoodCard/FoodCard'
 
 const FoodList = (props) => {
-  console.log(props.foods)
   if (!props.foods) return <h4>No Food Added</h4>
 
   return (
@@ -11,6 +10,7 @@ const FoodList = (props) => {
           key={food._id}
           food={food}
           user={props.user}
+          potluckId={props.potluckId}
         />
       ))}
     </>

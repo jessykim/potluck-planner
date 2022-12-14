@@ -26,7 +26,6 @@ const show = async (id) => {
 
 const create = async (potluckData) => {
   try {
-    // POST http://localhost:3001/api/potlucks
     const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: {

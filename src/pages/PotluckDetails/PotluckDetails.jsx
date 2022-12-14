@@ -79,7 +79,7 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Food List</h1>
         <FoodForm handleAddFood={handleAddFood} user={props.user} />
-        <FoodList foods={foods} user={props.user} />
+        <FoodList foods={foods} user={props.user} potluckId={id} />
       </section>
     </main>
   )
