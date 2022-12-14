@@ -1,15 +1,20 @@
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const DrinkCard = ({ drink, user, potluckId }) => {
-  // console.log(user.profile)
+  console.log(drink.alcoholic)
   return (
     <article>
       <p>{user.name}</p>
       <p>{drink.name}</p>
-      <p>{drink.type}</p>
+      {drink.alcoholic ?
+        <p>ALCOHOLIC</p>
+        :
+        <p>NON-ALCOHOLIC</p>
+      }
+      <p>{drink.quantity}</p>
       <p>{drink.notes}</p>
       <span>
-        {/* {drink.provider === user.profile &&
+        {drink.provider === user.profile &&
           <>
             <Link 
               to={`/potlucks/${potluckId}/drinks/${drink._id}`} 
@@ -17,9 +22,9 @@ const DrinkCard = ({ drink, user, potluckId }) => {
             >
               Edit
             </Link>
-            <button onClick={() => handleDeleteDrink(potluckId, drink._id)}>Delete</button>
+            {/* <button onClick={() => handleDeleteDrink(potluckId, drink._id)}>Delete</button> */}
           </>
-        } */}
+        }
       </span>
     </article>
   )

@@ -15,6 +15,7 @@ import PotluckDetails from './pages/PotluckDetails/PotluckDetails'
 import EditPotluck from './pages/EditPotluck/EditPotluck'
 import EditRsvp from './pages/EditRsvp/EditRsvp'
 import EditFood from './pages/EditFood/EditFood'
+import EditDrink from './pages/EditDrink/EditDrink'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -130,6 +131,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditFood user={user} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/potlucks/:potluckId/drinks/:drinkId"
+          element={
+            <ProtectedRoute user={user}>
+              <EditDrink user={user} />
             </ProtectedRoute>
           }
         />

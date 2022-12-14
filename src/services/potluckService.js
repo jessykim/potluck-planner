@@ -201,6 +201,22 @@ const drinkIndex = async (id) => {
   }
 }
 
+const updateDrink = async (potluckId, drinkId, drinkData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckId}/drinks/${drinkId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(drinkData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -215,5 +231,6 @@ export {
   updateFood,
   deleteFood,
   createDrink,
-  drinkIndex
+  drinkIndex,
+  updateDrink
 }
