@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const RsvpCard = ({ rsvp, user, potluckId, handleDeleteRsvp }) => {
   // console.log(rsvp.guest)
   // console.log(user.profile)
-  console.log(rsvp._id)
+  // console.log(rsvp._id)
   return (
     <article>
       <p>{user.name}</p>

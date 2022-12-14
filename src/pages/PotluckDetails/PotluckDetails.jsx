@@ -17,7 +17,7 @@ const PotluckDetails = (props) => {
   const { id } = useParams()
   const [potluck, setPotluck] = useState(null)
   const [foods, setFoods] = useState([])
-
+  
   const handleAddRsvp = async (rsvpData) => {
     const newRsvp = await potluckService.createRsvp(id, rsvpData)
     setPotluck({ ...potluck, rsvps: [...potluck.rsvps, newRsvp]})
@@ -37,9 +37,11 @@ const PotluckDetails = (props) => {
     const fetchPotluck = async () => {
       const data = await potluckService.show(id)
       setPotluck(data)
+      const foodData = await potluckService.foodIndex(id)
+      setFoods(foodData)
     }
     fetchPotluck()
-  }, [id])
+  }, [id, setFoods])
   
   if (!potluck) return <Loading />
 

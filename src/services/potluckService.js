@@ -133,6 +133,17 @@ const createFood = async (id, foodData) => {
   }
 }
 
+const foodIndex = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/foods`, {
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -142,5 +153,6 @@ export {
   createRsvp,
   updateRsvp,
   deleteRsvp,
-  createFood
+  createFood,
+  foodIndex
 }
