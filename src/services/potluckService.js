@@ -230,6 +230,22 @@ const deleteDrink = async (potluckId, drinkId) => {
   }
 }
 
+const createItem = async (id, itemData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/items`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(itemData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -246,5 +262,6 @@ export {
   createDrink,
   drinkIndex,
   updateDrink,
-  deleteDrink
+  deleteDrink,
+  createItem
 }
