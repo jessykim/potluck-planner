@@ -190,6 +190,17 @@ const createDrink = async (id, drinkData) => {
   }
 }
 
+const drinkIndex = async (id) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${id}/drinks`, {
+      headers: { "Authorization": `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -203,5 +214,6 @@ export {
   foodIndex,
   updateFood,
   deleteFood,
-  createDrink
+  createDrink,
+  drinkIndex
 }
