@@ -11,7 +11,7 @@ const ItemList = (props) => {
           item={item}
           user={props.user}
           potluckId={props.potluckId}
-          // handleDeleteFood={props.handleDeleteFood}
+          handleDeleteItem={props.handleDeleteItem}
         />
       ))}
     </>

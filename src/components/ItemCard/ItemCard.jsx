@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const ItemCard = ({ item, user, potluckId }) => {
+const ItemCard = ({ item, user, potluckId, handleDeleteItem }) => {
   return (
     <article>
       <p>{user.name}</p>
@@ -16,7 +16,7 @@ const ItemCard = ({ item, user, potluckId }) => {
             >
               Edit
             </Link>
-            {/* <button onClick={() => handleDeleteItem(potluckId, item._id)}>Delete</button> */}
+            <button onClick={() => handleDeleteItem(potluckId, item._id)}>Delete</button>
           </>
         }
       </span>

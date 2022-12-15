@@ -273,6 +273,20 @@ const updateItem = async (potluckId, itemId, itemData) => {
   }
 }
 
+const deleteItem = async (potluckId, itemId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${potluckId}/items/${itemId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export {
 	create,
   index,
@@ -292,5 +306,6 @@ export {
   deleteDrink,
   createItem,
   itemIndex,
-  updateItem
+  updateItem,
+  deleteItem
 }

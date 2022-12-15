@@ -60,6 +60,12 @@ const PotluckDetails = (props) => {
     setDrinks(drinks.filter((drink) => drink._id !== deletedDrink._id))
     navigate(`/potlucks/${potluckId}`)
   }
+
+  const handleDeleteItem = async (potluckId, itemId) => {
+    const deletedItem = await potluckService.deleteItem(potluckId, itemId)
+    setItems(items.filter((item) => item._id !== deletedItem._id))
+    navigate(`/potlucks/${potluckId}`)
+  }
   
   useEffect(() => {
     const fetchPotluck = async () => {
@@ -121,7 +127,7 @@ const PotluckDetails = (props) => {
       <section>
         <h1>Item List</h1>
         <ItemForm handleAddItem={handleAddItem} user={props.user} />
-        <ItemList items={items} user={props.user} potluckId={id} />
+        <ItemList items={items} user={props.user} potluckId={id} handleDeleteItem={handleDeleteItem} />
       </section>
     </main>
   )
