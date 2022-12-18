@@ -1,17 +1,20 @@
 .container {
   height: 100%;
   display: flex;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding: 28px 21px;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
+  /* padding: 28px 21px; */
   align-items: center;
   flex-direction: column;
+  border: 2px solid #E29578;
+  border-radius: 10px;
+  margin: 8px;
 }
 
-.container input, textarea, select, button { 
+.container input { 
   width: 100%;
-  padding: 14px;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 13px;
   resize: vertical;
   border-radius: 5px;
   margin: 7px 0px 14px 0px;
@@ -19,9 +22,9 @@
   font-family: canada-type-gibson, sans-serif;
 }
 
-.container textarea {
+/* .container textarea {
   min-height: 50px;
-}
+} */
 
 .container label {
   font-weight: 600;
@@ -29,13 +32,14 @@
 }
 
 .container button {
-  color: white;
+  color: #006D77;
   font-weight: 600;
-  margin: 21px 0px 0px 0px;
-  background: var(--primary);
+  width: 100%;
+  /* margin: 21px 0px 0px 0px; */
+  /* background: var(--primary); */
 }
 
-.container a {
+/* .container a {
   border: none;
   font-size: 14px;
   background: none;
@@ -43,9 +47,9 @@
   margin-top: 14px;
   text-align: center;
   color: rgb(200, 200, 200);
-}
+} */
 
-input:focus, select:focus, textarea:focus {
+/* input:focus, select:focus, textarea:focus {
   outline: none;
   border: 1px solid var(--primary);
-}
+} */

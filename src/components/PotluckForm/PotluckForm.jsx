@@ -59,9 +59,9 @@ const PotluckForm = (props) => {
               required
             />
           </div>
-          <div className="form-group mb-4">
+          <div className="form-group mb-3">
             <label htmlFor="description-input" className="form-label">
-              Description (optional)
+              Description
             </label>
             <input 
               type="text"
@@ -69,16 +69,17 @@ const PotluckForm = (props) => {
               name="description"
               value={props.potluckForm.description}
               onChange={props.handleChange}
+              placeholder="Optional"
             />
           </div>
-          <div className="d-grid">
+          {/* <div className="d-grid"> */}
             <button
               type="submit"
-              className="btn btn-primary btn-fluid"
+              className="btn btn-light btn-fluid"
             >
               Add Potluck
             </button>
-          </div>
+          {/* </div> */}
         </form>
       </main>
     </>
