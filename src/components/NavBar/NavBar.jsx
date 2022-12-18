@@ -12,6 +12,7 @@ const NavBar = ({ user, handleLogout }) => {
   const protectedLinks = (
     <>
       {/* <NavLink to="/changePassword" onClick={handleLogout}>Change Password</NavLink> */}
+      <NavLink to="/">home</NavLink>
       <NavLink to="/potlucks">potlucks</NavLink>
       <NavLink to="/potlucks/add">+ add</NavLink>
       {/* <NavLink to="/profiles">Profiles</NavLink> */}
@@ -22,7 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className={styles.container}>
       {/* <NavLink to={'/'}></NavLink> */}
-      <div>
+      <div className={styles.navdiv}>
         {user ? protectedLinks : publicLinks}
       </div>
     </nav>
