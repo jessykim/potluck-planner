@@ -73,12 +73,12 @@ const PotluckForm = (props) => {
             />
           </div>
           {/* <div className="d-grid"> */}
-            <button
-              type="submit"
-              className="btn btn-light btn-fluid"
-            >
-              Add Potluck
-            </button>
+          <button
+            type="submit"
+            className="btn btn-light btn-fluid"
+          >
+            Add Potluck
+          </button>
           {/* </div> */}
         </form>
       </main>
