@@ -6,7 +6,6 @@ import styles from './PotluckCard.module.css'
 // import AuthorInfo from "../AuthorInfo/AuthorInfo"
 
 const PotluckCard = ({ potluck }) => {
-  // console.log(potluck._id)
   const start = new Date(potluck.start).toLocaleDateString()
   const starttime = new Date(potluck.start).toLocaleTimeString()
 
