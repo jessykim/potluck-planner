@@ -94,21 +94,19 @@ const PotluckDetails = (props) => {
         <header>
           <h1>{potluck.name}</h1>
           <span>
-            {potluck.host.name}
+            Hosted by {potluck.host.name}
           </span>
         </header>
         <p>Begins: {start} at {starttime}</p>
         <p>Ends: {end} at  {endtime}</p>
         <p>{potluck.description}</p>
-      </article>
-      <span>
         {potluck.host._id === props.user.profile &&
-          <>
-            <Link to={`/potlucks/${id}/edit`} state={potluck}>Edit</Link>
+          <div className={styles.btns}>
+            <Link to={`/potlucks/${id}/edit`} state={potluck}><button>Edit</button></Link>
             <button onClick={() => props.handleDeletePotluck(id)}>Delete</button>
-          </>
+          </div>
         }
-      </span>
+      </article>
       <section>
         <h1>Guest List</h1>
         <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
