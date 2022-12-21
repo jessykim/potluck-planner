@@ -47,6 +47,17 @@
   margin-bottom: 20px;
 }
 
+.container section {
+  border: 1px solid red;
+  /* display: flex;
+  flex-direction: column; */
+  padding: 15px;
+}
+
+.container section > h1 {
+  margin-bottom: 20px;
+}
+
 .container header > h1 {
   margin-bottom: 20px;
 }
