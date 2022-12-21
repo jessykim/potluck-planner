@@ -1,0 +1,36 @@
+.itemCard {
+  /* border: 1px solid red; */
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 16px 21px;
+  box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+}
+
+.itemCard > p {
+  margin-bottom: 5px;
+}
+
+.btns {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btns > a {
+  padding: 0px;
+}
+
+.btns button {
+  /* width: 100%; */
+  height: 100%;
+  border-radius: 5px;
+  border: thin solid black;
+  background-color: rgba(255, 255, 255, 0.596);
+  padding: 7px;
+  margin: 5px;
+}
