@@ -6,7 +6,7 @@ const RsvpCard = ({ rsvp, user, potluckId, handleDeleteRsvp }) => {
     <div className={styles.rsvpCard}>
       <p>Guest: {user.name}</p>
       <p>Party of {rsvp.party}</p>
-      {rsvp.notes ? <p>Comment: {rsvp.notes}</p> : ""}
+      {rsvp.notes ? <p>Note: {rsvp.notes}</p> : ""}
       <p>RSVP: {rsvp.rsvp}</p>
       {rsvp.guest === user.profile &&
         <div className={styles.btns}>

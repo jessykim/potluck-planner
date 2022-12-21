@@ -108,22 +108,22 @@ const PotluckDetails = (props) => {
         }
       </article>
       <section>
-        <h1>Guest List</h1>
+        <h1>Guests</h1>
         <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
         <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
       </section>
       <section>
-        <h1>Food List</h1>
+        <h1>Food</h1>
         <FoodForm handleAddFood={handleAddFood} user={props.user} />
         <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
       </section>
       <section>
-        <h1>Drink List</h1>
+        <h1>Drinks</h1>
         <DrinkForm handleAddDrink={handleAddDrink} user={props.user} />
         <DrinkList drinks={drinks} user={props.user} potluckId={id} handleDeleteDrink={handleDeleteDrink} />
       </section>
       <section>
-        <h1>Item List</h1>
+        <h1>Items</h1>
         <ItemForm handleAddItem={handleAddItem} user={props.user} />
         <ItemList items={items} user={props.user} potluckId={id} handleDeleteItem={handleDeleteItem} />
       </section>
