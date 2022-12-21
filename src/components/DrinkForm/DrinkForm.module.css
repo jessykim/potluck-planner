@@ -1,0 +1,49 @@
+.container {
+  /* border: 1px solid red; */
+  /* padding: 0; */
+  display: flex;
+  /* border: none; */
+  /* max-width: 100%; */
+  /* box-shadow: none; */
+  flex-direction: column;
+  /* align-items: center; */
+  /* -moz-box-shadow: none;
+  -webkit-box-shadow: none; */
+}
+
+/* .container > label, button {
+  margin-top: 10px;
+} */
+
+.container input, textarea, select { 
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 1px solid var(--border);
+  font-family: canada-type-gibson, sans-serif;
+}
+
+.container button {
+  color: #006D77;
+  font-weight: 600;
+  width: 100%;
+}
+
+#checkbox {
+  /* border: 1px solid blue; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#checkbox > input {
+  width: 30px;
+  margin: 0;
+}
+
+#checkbox > label {
+  margin-bottom: 0;
+}
