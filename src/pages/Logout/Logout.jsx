@@ -4,7 +4,7 @@ import styles from './Logout.module.css'
 const Logout = () => {
   return (
     <main className={styles.container}>
-      <h1>Seeya!</h1>
+      <h1>Goodbye!</h1>
       {/* <img src={Toodles} alt="A cute owl" /> */}
     </main>
   )
