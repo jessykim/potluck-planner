@@ -174,8 +174,24 @@ const PotluckDetails = (props) => {
           </h2>
           <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
             <div class="accordion-body">
-              <DrinkForm handleAddDrink={handleAddDrink} user={props.user} />
-              <DrinkList drinks={drinks} user={props.user} potluckId={id} handleDeleteDrink={handleDeleteDrink} />
+              <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addDrink" aria-expanded="false" aria-controls="addDrink">
+                  Add Drink
+                </button>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#drinkList" aria-expanded="false" aria-controls="drinkList">
+                  Drink List
+                </button>
+              </p>
+              <section class="collapse" id="addDrink">
+                <div class="card card-body">
+                  <DrinkForm handleAddDrink={handleAddDrink} user={props.user} />
+                </div>
+              </section>
+              <div class="collapse" id="drinkList">
+                <div class="card card-body">
+                  <DrinkList drinks={drinks} user={props.user} potluckId={id} handleDeleteDrink={handleDeleteDrink} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
