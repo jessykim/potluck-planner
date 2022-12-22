@@ -22,47 +22,54 @@ const EditRsvp = (props) => {
 
   return (
     <>
-      <form className={styles.container} onSubmit={handleSubmit}>
-        <h1>{props.user.name}</h1>
-        <label htmlFor="party-input" className="form-label">
-          Party of
-        </label>
-        <input 
-          type="number" 
-          id="party-input"
-          name="party"
-          value={rsvpForm.party}
-          onChange={handleChange}
-          min="0"
-          required
-        />
-        <label htmlFor="notes-input" className="form-label">
-          Additional Notes
-        </label>
-        <textarea
-          type="text"
-          name="notes"
-          id="notes-input"
-          value={rsvpForm.notes}
-          placeholder="Optional"
-          onChange={handleChange}
-        />
-        <label htmlFor="rsvp-input" className="form-label">
-          RSVP
-        </label>
-        <select 
-          name="rsvp" 
-          id="rsvp-input"
-          value={rsvpForm.rsvp}
-          onChange={handleChange}
-          required
-        >
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-          <option value="Maybe">Maybe</option>
-        </select>
-        <button type="submit">Submit</button>
-      </form>
+      <main className={styles.container}>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.editForm}>
+          <div className="form-group mb-3">
+            <label htmlFor="party-input" className="form-label">
+              Party of
+            </label>
+            <input 
+              type="number" 
+              id="party-input"
+              name="party"
+              value={rsvpForm.party}
+              onChange={handleChange}
+              min="0"
+              required
+            />
+          </div>
+          <div className="form-group mb-3">
+            <label htmlFor="notes-input" className="form-label">
+              Additional Notes
+            </label>
+            <textarea
+              type="text"
+              name="notes"
+              id="notes-input"
+              value={rsvpForm.notes}
+              placeholder="Optional"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group mb-3">
+            <label htmlFor="rsvp-input" className="form-label">
+              RSVP
+            </label>
+            <select 
+              name="rsvp" 
+              id="rsvp-input"
+              value={rsvpForm.rsvp}
+              onChange={handleChange}
+              required
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="Maybe">Maybe</option>
+            </select>
+          </div>
+          <button type="submit" className="btn btn-light btn-fluid">Submit</button>
+        </form>
+      </main>
     </>
   )
 }

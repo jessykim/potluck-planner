@@ -1,20 +1,25 @@
-/* .container {
-  height: 100%;
-  display: flex;
-  overflow: hidden;
-  padding: 28px 21px;
-  align-items: center;
-  flex-direction: column;
+.editForm {
+  padding: 12px 0 19px 0;
 }
 
-.container textarea, button { 
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #E29578;
+  border-radius: 10px;
+  margin: 8px;
+}
+
+.editForm input, textarea, select { 
   width: 100%;
-  padding: 14px;
-  font-size: 14px;
+  padding: 10px;
+  font-size: 13px;
   resize: vertical;
   border-radius: 5px;
   margin: 7px 0px 14px 0px;
-  border: 1px solid var(--border);
+  border: none;
   font-family: canada-type-gibson, sans-serif;
 }
 
@@ -24,18 +29,7 @@
 }
 
 .container button {
-  color: white;
+  color: #006D77;
   font-weight: 600;
-  margin: 21px 0px 0px 0px;
-  background: var(--primary);
+  width: 100%;
 }
-
-.container a {
-  border: none;
-  font-size: 14px;
-  background: none;
-  font-weight: 500;
-  margin-top: 14px;
-  text-align: center;
-  color: rgb(200, 200, 200);
-} */

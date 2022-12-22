@@ -18,7 +18,7 @@ const EditPotluck = (props) => {
   return (
     <>
       <main className={styles.container}>
-        <form autoComplete="off" onSubmit={handleSubmit}>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.editForm}>
           <div className="form-group mb-3">
             <label htmlFor="name-input" className="form-label">
               Potluck Name
@@ -85,14 +85,12 @@ const EditPotluck = (props) => {
               onChange={handleChange}
             />
           </div>
-          {/* <div className="d-grid"> */}
           <button
             type="submit"
             className="btn btn-light btn-fluid"
           >
             Save Changes
           </button>
-          {/* </div> */}
         </form>
       </main>
     </>
