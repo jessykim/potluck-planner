@@ -1,8 +1,11 @@
 import FoodCard from '../FoodCard/FoodCard'
 
 const FoodList = (props) => {
-  if (!props.foods) return <h4>No Food Added</h4>
-
+  if (props.foods.length < 1) {
+    return (
+      <h1>No Food Added</h1>
+    ) 
+  }
   return (
     <>
       {props.foods.map((food) => (

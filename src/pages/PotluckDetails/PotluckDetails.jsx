@@ -124,11 +124,11 @@ const PotluckDetails = (props) => {
                   Guest List
                 </button>
               </p>
-              <div class="collapse" id="submitRSVP">
+              <section class="collapse" id="submitRSVP">
                 <div class="card card-body">
                   <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
                 </div>
-              </div>
+              </section>
               <div class="collapse" id="rsvpList">
                 <div class="card card-body">
                   <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
@@ -145,8 +145,24 @@ const PotluckDetails = (props) => {
           </h2>
           <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body">
-              <FoodForm handleAddFood={handleAddFood} user={props.user} />
-              <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
+              <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addFood" aria-expanded="false" aria-controls="addFood">
+                  Add Food
+                </button>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#foodList" aria-expanded="false" aria-controls="foodList">
+                  Food List
+                </button>
+              </p>
+              <section class="collapse" id="addFood">
+                <div class="card card-body">
+                  <FoodForm handleAddFood={handleAddFood} user={props.user} />
+                </div>
+              </section>
+              <div class="collapse" id="foodList">
+                <div class="card card-body">
+                  <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
