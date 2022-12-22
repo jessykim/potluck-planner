@@ -27,44 +27,48 @@ const LoginForm = props => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className={styles.container}
-    >
-      <h1>LOGIN</h1>
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
-        <input
-          type="text"
+    <>
+      <main className={styles.container}>
+        <h1>LOG IN</h1>
+        <form
           autoComplete="off"
-          id="email"
-          value={formData.email}
-          name="email"
-          onChange={handleChange}
-          placeholder="user@potluckplanner.com"
-        />
-      </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
-        <input
-          type="password"
-          autoComplete="off"
-          id="password"
-          value={formData.pw}
-          name="pw"
-          onChange={handleChange}
-          placeholder="*********"
-        />
-      </div>
-      <div>
-        <button className={styles.button}>Login</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-      <h2>GOOD TO SEE YOU AGAIN!</h2>
-    </form>
+          onSubmit={handleSubmit}
+        >
+          <div className="form-group mb-3">
+            <label htmlFor="email-input" className="form-label">
+              Email
+            </label>
+            <input
+              type="text"
+              autoComplete="off"
+              id="email-input"
+              value={formData.email}
+              name="email"
+              onChange={handleChange}
+              // placeholder=""
+            />
+          </div>
+          <div className="form-group mb-3">
+            <label htmlFor="password-input" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              autoComplete="off"
+              id="password-input"
+              value={formData.pw}
+              name="pw"
+              onChange={handleChange}
+              // placeholder=""
+            />
+          </div>
+          <button className="btn btn-light btn-fluid">Login</button>
+          {/* <Link to="/">
+            <button className="btn btn-light btn-fluid">Cancel</button>
+          </Link> */}
+        </form>
+      </main>
+    </>
   )
 }
 

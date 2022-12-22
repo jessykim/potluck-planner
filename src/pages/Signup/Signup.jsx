@@ -8,7 +8,7 @@ const Signup = props => {
   const updateMessage = msg => {
     setMessage(msg)
   }
-
+  
   return (
     <main className={styles.container}>
       <p>{message}</p>
