@@ -3,17 +3,12 @@ section {
 }
 
 .container {
-  /* height: 100%; */
-  /* width: 100%; */
   display: flex;
-  /* overflow: scroll; */
   align-items: center;
   flex-direction: column;
   border: 2px solid #E29578;
   border-radius: 10px;
   margin: 8px;
-  /* background-color: var(--card-background); */
-  /* background-color: white; */
   box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
 }

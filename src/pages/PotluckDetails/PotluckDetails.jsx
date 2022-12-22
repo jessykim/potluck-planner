@@ -107,117 +107,117 @@ const PotluckDetails = (props) => {
           </div>
         }
       </article>
-      <div class="accordion" id={styles.accordion}>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+      <div className="accordion" id={styles.accordion}>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
               Guests
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
+          <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+            <div className="accordion-body">
               <p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#submitRSVP" aria-expanded="false" aria-controls="submitRSVP">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#submitRSVP" aria-expanded="false" aria-controls="submitRSVP">
                   Submit RSVP
                 </button>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#rsvpList" aria-expanded="false" aria-controls="rsvpList">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#rsvpList" aria-expanded="false" aria-controls="rsvpList">
                   Guest List
                 </button>
               </p>
-              <section class="collapse" id="submitRSVP">
-                <div class="card card-body">
+              <section className="collapse" id="submitRSVP">
+                <div className="card card-body">
                   <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
                 </div>
               </section>
-              <div class="collapse" id="rsvpList">
-                <div class="card card-body">
+              <div className="collapse" id="rsvpList">
+                <div className="card card-body">
                   <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
               Food
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-            <div class="accordion-body">
+          <div id="panelsStayOpen-collapseTwo" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div className="accordion-body">
               <p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addFood" aria-expanded="false" aria-controls="addFood">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addFood" aria-expanded="false" aria-controls="addFood">
                   Add Food
                 </button>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#foodList" aria-expanded="false" aria-controls="foodList">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#foodList" aria-expanded="false" aria-controls="foodList">
                   Food List
                 </button>
               </p>
-              <section class="collapse" id="addFood">
-                <div class="card card-body">
+              <section className="collapse" id="addFood">
+                <div className="card card-body">
                   <FoodForm handleAddFood={handleAddFood} user={props.user} />
                 </div>
               </section>
-              <div class="collapse" id="foodList">
-                <div class="card card-body">
+              <div className="collapse" id="foodList">
+                <div className="card card-body">
                   <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingThree">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
               Drinks
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-            <div class="accordion-body">
+          <div id="panelsStayOpen-collapseThree" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div className="accordion-body">
               <p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addDrink" aria-expanded="false" aria-controls="addDrink">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addDrink" aria-expanded="false" aria-controls="addDrink">
                   Add Drink
                 </button>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#drinkList" aria-expanded="false" aria-controls="drinkList">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#drinkList" aria-expanded="false" aria-controls="drinkList">
                   Drink List
                 </button>
               </p>
-              <section class="collapse" id="addDrink">
-                <div class="card card-body">
+              <section className="collapse" id="addDrink">
+                <div className="card card-body">
                   <DrinkForm handleAddDrink={handleAddDrink} user={props.user} />
                 </div>
               </section>
-              <div class="collapse" id="drinkList">
-                <div class="card card-body">
+              <div className="collapse" id="drinkList">
+                <div className="card card-body">
                   <DrinkList drinks={drinks} user={props.user} potluckId={id} handleDeleteDrink={handleDeleteDrink} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingFour">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
               Items
             </button>
           </h2>
-          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
-            <div class="accordion-body">
+          <div id="panelsStayOpen-collapseFour" className="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+            <div className="accordion-body">
               <p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addItem" aria-expanded="false" aria-controls="addItem">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addItem" aria-expanded="false" aria-controls="addItem">
                   Add Item
                 </button>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#itemList" aria-expanded="false" aria-controls="itemList">
+                <button className="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#itemList" aria-expanded="false" aria-controls="itemList">
                   Item List
                 </button>
               </p>
-              <section class="collapse" id="addItem">
-                <div class="card card-body">
+              <section className="collapse" id="addItem">
+                <div className="card card-body">
                   <ItemForm handleAddItem={handleAddItem} user={props.user} />
                 </div>
               </section>
-              <div class="collapse" id="itemList">
-                <div class="card card-body">
+              <div className="collapse" id="itemList">
+                <div className="card card-body">
                   <ItemList items={items} user={props.user} potluckId={id} handleDeleteItem={handleDeleteItem} />
                 </div>
               </div>
