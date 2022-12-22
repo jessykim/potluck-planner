@@ -47,16 +47,16 @@
   margin-bottom: 20px;
 }
 
-.container section {
+/* .container section {
   border: 1px solid red;
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   padding: 15px;
 }
 
 .container section > h1 {
   margin-bottom: 20px;
-}
+} */
 
 .container header > h1 {
   margin-bottom: 20px;
@@ -143,3 +143,8 @@
 .container > section article p {
   text-indent: 0px;
 } */
+
+#accordion {
+  width: 100%;
+  padding: 15px;
+}

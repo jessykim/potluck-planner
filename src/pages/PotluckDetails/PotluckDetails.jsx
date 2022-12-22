@@ -107,26 +107,60 @@ const PotluckDetails = (props) => {
           </div>
         }
       </article>
-      <section>
-        <h1>Guests</h1>
-        <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
-        <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
-      </section>
-      <section>
-        <h1>Food</h1>
-        <FoodForm handleAddFood={handleAddFood} user={props.user} />
-        <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
-      </section>
-      <section>
-        <h1>Drinks</h1>
-        <DrinkForm handleAddDrink={handleAddDrink} user={props.user} />
-        <DrinkList drinks={drinks} user={props.user} potluckId={id} handleDeleteDrink={handleDeleteDrink} />
-      </section>
-      <section>
-        <h1>Items</h1>
-        <ItemForm handleAddItem={handleAddItem} user={props.user} />
-        <ItemList items={items} user={props.user} potluckId={id} handleDeleteItem={handleDeleteItem} />
-      </section>
+      <div className="accordion" id={styles.accordion}>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingOne">
+            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              Guests
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" className="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div className="accordion-body">
+              <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
+              <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+              Food
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <FoodForm handleAddFood={handleAddFood} user={props.user} />
+              <FoodList foods={foods} user={props.user} potluckId={id} handleDeleteFood={handleDeleteFood} />
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+              Drinks
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+              <DrinkForm handleAddDrink={handleAddDrink} user={props.user} />
+              <DrinkList drinks={drinks} user={props.user} potluckId={id} handleDeleteDrink={handleDeleteDrink} />
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+              Items
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+            <div class="accordion-body">
+              <ItemForm handleAddItem={handleAddItem} user={props.user} />
+              <ItemList items={items} user={props.user} potluckId={id} handleDeleteItem={handleDeleteItem} />
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   )
 }
