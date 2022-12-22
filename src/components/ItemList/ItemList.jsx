@@ -1,8 +1,11 @@
 import ItemCard from "../ItemCard/ItemCard"
 
 const ItemList = (props) => {
-  if (!props.items) return <h4>No Item Added</h4>
-
+  if (props.items.length < 1) {
+    return (
+      <h1>No Items</h1>
+    )
+  }
   return (
     <>
       {props.items.map((item) => (
