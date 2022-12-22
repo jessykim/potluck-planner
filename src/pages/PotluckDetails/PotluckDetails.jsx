@@ -116,8 +116,24 @@ const PotluckDetails = (props) => {
           </h2>
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body">
-              <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
-              <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
+              <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#submitRSVP" aria-expanded="false" aria-controls="submitRSVP">
+                  Submit RSVP
+                </button>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#rsvpList" aria-expanded="false" aria-controls="rsvpList">
+                  Guest List
+                </button>
+              </p>
+              <div class="collapse" id="submitRSVP">
+                <div class="card card-body">
+                  <RsvpForm handleAddRsvp={handleAddRsvp} potluck={potluck} user={props.user} />
+                </div>
+              </div>
+              <div class="collapse" id="rsvpList">
+                <div class="card card-body">
+                  <RsvpList rsvps={potluck.rsvps} user={props.user} potluckId={id} handleDeleteRsvp={handleDeleteRsvp} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
