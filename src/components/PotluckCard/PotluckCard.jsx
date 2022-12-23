@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom"
 import styles from './PotluckCard.module.css'
 
-// Components
-// import Icon from "../Icon/Icon"
-// import AuthorInfo from "../AuthorInfo/AuthorInfo"
-
 const PotluckCard = ({ potluck }) => {
   const start = new Date(potluck.start).toLocaleDateString()
   const starttime = new Date(potluck.start).toLocaleTimeString()
