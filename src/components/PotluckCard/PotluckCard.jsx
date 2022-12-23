@@ -14,7 +14,7 @@ const PotluckCard = ({ potluck }) => {
           </span>
         </header>
         <p>{start} at {starttime}</p>
-        <p>{potluck.location}</p>
+        <p>Host: {potluck.host.name}</p>
       </article>
     </Link>
   )

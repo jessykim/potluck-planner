@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import styles from './RsvpCard.module.css'
 
 const RsvpCard = ({ rsvp, user, potluckId, handleDeleteRsvp }) => {
-  console.log(rsvp.guest)
+  // console.log(rsvp)
   return (
     <div className={styles.rsvpCard}>
       <p>Guest: {rsvp.guest}</p>
