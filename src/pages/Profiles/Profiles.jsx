@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import ProfileCard from '../../components/ProfileCard/ProfileCard'
+import styles from './Profiles.module.css'
 import * as profileService from '../../services/profileService'
 
 const Profiles = () => {
@@ -15,7 +16,7 @@ const Profiles = () => {
 
   return (
     <>
-      <main>
+      <main className={styles.container}>
         <h1>Potluckers</h1>
         {profiles.length ? 
           <>

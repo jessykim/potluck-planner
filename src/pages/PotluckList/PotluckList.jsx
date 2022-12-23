@@ -8,6 +8,7 @@ const PotluckList = ({ potlucks }) => {
 
   return (
     <main className={styles.container}>
+      <h1>Potlucks</h1>
       {potlucks.map((potluck) => (
         <PotluckCard key={potluck._id} potluck={potluck} />
       ))}
