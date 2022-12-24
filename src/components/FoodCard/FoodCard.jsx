@@ -2,13 +2,9 @@ import { Link } from "react-router-dom"
 import styles from './FoodCard.module.css'
 
 const FoodCard = ({ food, user, potluckId, handleDeleteFood }) => {
-
-  // console.log(food.provider)
-  // console.log(user.profile)
   return (
     <div className={styles.foodCard}>
       <p>{food.provider.name}</p>
-      {/* {console.log(food.provider.name)} */}
       <p>Bringing: {food.name}</p>
       <p>Category: {food.type}</p>
       {food.notes ? <p>Note: {food.notes}</p> : ""}

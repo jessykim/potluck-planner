@@ -36,7 +36,6 @@ const PotluckDetails = (props) => {
 
   const handleAddFood = async (foodData) => {
     const newFood = await potluckService.createFood(id, foodData)
-    console.log(newFood, 'newFood')
     setFoods([newFood, ...foods])
   }
 

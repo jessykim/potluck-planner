@@ -2,14 +2,13 @@ import { Link } from "react-router-dom"
 import styles from './RsvpCard.module.css'
 
 const RsvpCard = ({ rsvp, user, potluckId, handleDeleteRsvp }) => {
-  // console.log(rsvp)
   return (
     <div className={styles.rsvpCard}>
-      <p>Guest: {rsvp.guest}</p>
+      <p>Guest: {rsvp.guest.name}</p>
       <p>Party of {rsvp.party}</p>
       {rsvp.notes ? <p>Note: {rsvp.notes}</p> : ""}
       <p>RSVP: {rsvp.rsvp}</p>
-      {rsvp.guest === user.profile &&
+      {rsvp.guest._id === user.profile &&
         <div className={styles.btns}>
           <Link 
             to={`/potlucks/${potluckId}/rsvps/${rsvp._id}`} 
