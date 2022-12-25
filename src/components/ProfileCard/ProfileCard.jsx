@@ -6,7 +6,7 @@ const ProfileCard = ({ profile }) => {
   return (
     <>
       <article className={styles.container}>
-        {profile.photo ? <img src={profile.photo} alt="profile" /> : <CiUser />}
+        {profile.photo ? <img src={profile.photo} alt="profile" /> : <div><CiUser /></div>}
           <h1 className={styles.username}>{profile.name}</h1>    
       </article>
     </>
