@@ -4,11 +4,11 @@ import styles from './ItemCard.module.css'
 const ItemCard = ({ item, user, potluckId, handleDeleteItem }) => {
   return (
     <div className={styles.itemCard}>
-      <p>{user.name}</p>
+      <p>{item.provider.name}</p>
       <p>Bringing: {item.name}</p>
       <p>Category: {item.category}</p>
       {item.notes ? <p>Note: {item.notes}</p> : ""}
-      {item.provider === user.profile &&
+      {item.provider._id === user.profile &&
         <div className={styles.btns}>
           <Link 
             to={`/potlucks/${potluckId}/items/${item._id}`} 
