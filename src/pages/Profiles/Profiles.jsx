@@ -8,7 +8,7 @@ const Profiles = () => {
 
   useEffect(()=> {
     const fetchProfiles = async () => {
-      const profileData = await profileService.getAllProfiles()
+      const profileData = await profileService.index()
       setProfiles(profileData)
     }
     fetchProfiles()
@@ -20,12 +20,12 @@ const Profiles = () => {
         <h1>Potluckers</h1>
         {profiles.length ? 
           <>
-            {profiles.map(profile=>
+            {profiles.map((profile) =>
               <ProfileCard key={profile._id} profile={profile} />
             )}
           </>
         :
-          <p>No profiles yet</p>
+          <p>No Profiles Added</p>
         }
       </main>
     </>
