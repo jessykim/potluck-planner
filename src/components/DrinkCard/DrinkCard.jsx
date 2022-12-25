@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import styles from './DrinkCard.module.css'
 
 const DrinkCard = ({ drink, user, potluckId, handleDeleteDrink }) => {
+  // console.log(drink.name)
   return (
     <div className={styles.drinkCard}>
       <p>{drink.provider.name}</p>

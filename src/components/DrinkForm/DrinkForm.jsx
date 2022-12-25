@@ -8,23 +8,26 @@ const DrinkForm = (props) => {
     quantity: '',
     notes: ''
   })
+  const [checkbox, setCheckbox] = useState(false)
 
-  
   const handleChange = ({ target }) => {
-    if (target.name === 'alcoholic') {
-      if (target.checked) {
-        setDrinkForm({ ...drinkForm, alcoholic: true })
-      } else {
-        setDrinkForm({ ...drinkForm, alcoholic: false })
-      }
-    } else {
-      setDrinkForm({ ...drinkForm, [target.name]: target.value })
+    setDrinkForm({ ...drinkForm, [target.name]: target.value })
+  }
+
+  const checkboxHandleChange = ({ target }) => {
+    if (target.checked) {
+      setDrinkForm({ ...drinkForm, alcoholic: true})
+      setCheckbox(true)
+    } else if (target.unchecked) {
+      setDrinkForm({ ...drinkForm, alcoholic: false})
+      setCheckbox(false)
     }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddDrink(drinkForm)
+    setCheckbox(false)
     setDrinkForm({
       name: '',
       alcoholic: false,
@@ -56,7 +59,8 @@ const DrinkForm = (props) => {
               id="alcoholic-input"
               name="alcoholic"
               value={drinkForm.alcoholic}
-              onChange={handleChange}
+              onChange={checkboxHandleChange}
+              checked={checkbox}
             />
             <label htmlFor="alcoholic-input" className="form-label">
               Alcoholic
