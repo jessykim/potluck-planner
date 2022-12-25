@@ -1,18 +1,13 @@
 // import { Link } from "react-router-dom"
 import styles from './ProfileCard.module.css'
+import { CiUser } from 'react-icons/ci'
 
 const ProfileCard = ({ profile }) => {
-  // const start = new Date(potluck.start).toLocaleDateString()
-  // const starttime = new Date(potluck.start).toLocaleTimeString()
-  console.log(profile)
   return (
     <>
       <article className={styles.container}>
-        <header>
-          <span>
-            <h1>{profile.name}</h1>
-          </span>
-        </header>
+        {profile.photo ? <img src={profile.photo} alt="profile" /> : <CiUser />}
+          <h1 className={styles.username}>{profile.name}</h1>    
       </article>
     </>
     // <Link to={`/potlucks/${potluck._id}`}>
