@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { CiUser } from 'react-icons/ci'
+import styles from './ProfileDetails.module.css'
 
 // Components
 import Loading from '../Loading/Loading'
@@ -24,7 +26,17 @@ const ProfileDetails = (props) => {
   console.log(profile)
 
   return (
-    <h1>Hi</h1>
+    <main className={styles.container}>
+      <article>
+        <header>
+          {profile.photo ? <img src={profile.photo} alt="profile" /> : <div><CiUser /></div>}
+          <h1>{profile.name}</h1>
+          {/* <span>
+            Hosted by {potluck.host.name}
+          </span> */}
+        </header>
+      </article>
+    </main>
   )
 }
 
