@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { CiUser } from 'react-icons/ci'
 import styles from './ProfileDetails.module.css'
 
@@ -23,19 +23,20 @@ const ProfileDetails = (props) => {
 
   if (!profile) return <Loading />
 
-  console.log(profile)
-
   return (
     <main className={styles.container}>
       <article>
-        <header>
+        <header className={styles.profileHeader}>
           {profile.photo ? <img src={profile.photo} alt="profile" /> : <div><CiUser /></div>}
-          <h1>{profile.name}</h1>
-          {/* <span>
-            Hosted by {potluck.host.name}
-          </span> */}
+          <h1 className={styles.username}>{profile.name}</h1>
         </header>
       </article>
+      {profile._id === props.user.profile &&
+        <div className={styles.btns}>
+          <Link to={`/profiles/${id}/edit`} state={profile}><button>Edit</button></Link>
+          {/* <button onClick={() => props.handleDeleteProfile(id)}>Delete</button> */}
+        </div>
+      }
     </main>
   )
 }

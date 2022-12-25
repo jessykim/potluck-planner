@@ -9,8 +9,41 @@
   -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
 }
 
-header {
+.profileHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+}
+
+svg {
+  height: 20px;
+  width: 20px;
+}
+
+.profileHeader > div {
+  border: 0.5px solid;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.username {
+  padding: 15px 0;
+}
+
+.btns > a {
+  padding: 0px;
+}
+
+.btns button {
+  height: 100%;
+  border-radius: 5px;
+  border: thin solid black;
+  background-color: rgba(255, 255, 255, 0.596);
+  padding: 7px;
+  margin: 5px;
 }
