@@ -40,11 +40,11 @@ const ProfileDetails = (props) => {
       <section className={styles.diet}>
         <div>
           <h5>Allergies</h5> 
-          {profile.allergies ? <li>{profile.allergies}</li> : 'None'}
+          {profile.allergies ? <li>{profile.allergies}</li> : <li>None</li>}
         </div>
         <div>
           <h5>Dietary Preferences/Restrictions</h5>
-          {profile.dietpref ? <li>{profile.dietpref}</li> : 'None'}
+          {profile.dietpref ? <li>{profile.dietpref}</li> : <li>None</li>}
         </div>
       </section>
     </main>

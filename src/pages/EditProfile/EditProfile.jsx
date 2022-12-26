@@ -30,7 +30,7 @@ const EditProfile = (props) => {
     <>
       <main className={styles.container}>
         <form autoComplete="off" onSubmit={handleSubmit} className={styles.editForm}>
-          <div className="form-group mb-3">
+          {/* <div className="form-group mb-3">
             <label htmlFor="name-input" className="form-label">
               Name
             </label>
@@ -42,7 +42,7 @@ const EditProfile = (props) => {
               onChange={handleChange}
               required
             />
-          </div>
+          </div> */}
           <div className="form-group mb-3">
             <label htmlFor="allergies-input" className="form-label">
               Allergies
