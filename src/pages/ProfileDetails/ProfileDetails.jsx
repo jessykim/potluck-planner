@@ -37,9 +37,15 @@ const ProfileDetails = (props) => {
           {/* <button onClick={() => props.handleDeleteProfile(id)}>Delete</button> */}
         </div>
       }
-      <section>
-        <p>Allergies: {profile.allergies}</p>
-        <p>Dietary Preferences/Restrictions: {profile.dietpref}</p>
+      <section className={styles.diet}>
+        <div>
+          <h5>Allergies</h5> 
+          {profile.allergies ? <li>{profile.allergies}</li> : 'None'}
+        </div>
+        <div>
+          <h5>Dietary Preferences/Restrictions</h5>
+          {profile.dietpref ? <li>{profile.dietpref}</li> : 'None'}
+        </div>
       </section>
     </main>
   )

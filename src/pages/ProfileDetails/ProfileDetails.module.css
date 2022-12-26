@@ -1,3 +1,7 @@
+section {
+  margin-top: 20px;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -14,6 +18,10 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+}
+
+.diet > div {
+  margin-bottom: 15px;
 }
 
 svg {
