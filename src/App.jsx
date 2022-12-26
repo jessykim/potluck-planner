@@ -90,7 +90,7 @@ function App() {
         <Route path="/logout" element={<Logout handleSignupOrLogin={handleSignupOrLogin} />} />
         <Route
           path="/changePassword"
-          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <navigate to="/login" />}
+          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <navigate to="/login" />}
         />
         <Route
           path="/profiles"
