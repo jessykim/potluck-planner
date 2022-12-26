@@ -1,0 +1,35 @@
+.editForm {
+  padding: 12px 0 19px 0;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #E29578;
+  border-radius: 10px;
+  margin: 8px;
+}
+
+.container input { 
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 1px solid var(--border);
+  font-family: canada-type-gibson, sans-serif;
+}
+
+.container label {
+  font-weight: 600;
+  margin: 7px 0px 14px 0px;
+}
+
+.container button {
+  color: #006D77;
+  font-weight: 600;
+  width: 100%;
+}

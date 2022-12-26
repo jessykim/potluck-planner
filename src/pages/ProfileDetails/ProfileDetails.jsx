@@ -37,6 +37,10 @@ const ProfileDetails = (props) => {
           {/* <button onClick={() => props.handleDeleteProfile(id)}>Delete</button> */}
         </div>
       }
+      <section>
+        <p>Allergies: {profile.allergies}</p>
+        <p>Dietary Preferences/Restrictions: {profile.dietpref}</p>
+      </section>
     </main>
   )
 }

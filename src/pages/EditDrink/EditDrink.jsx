@@ -10,9 +10,6 @@ const EditDrink = (props) => {
   const { potluckId, drinkId } = useParams()
   const [drinkForm, setDrinkForm] = useState(state)
 
-  console.log(state.alcoholic)
-  console.log(drinkForm.alcoholic)
-
   const handleChange = ({ target }) => {
     if (target.name === 'alcoholic') {
       if (target.checked) {

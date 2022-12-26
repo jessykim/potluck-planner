@@ -18,6 +18,7 @@ import EditFood from './pages/EditFood/EditFood'
 import EditDrink from './pages/EditDrink/EditDrink'
 import EditItem from './pages/EditItem/EditItem'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
+import EditProfile from './pages/EditProfile/EditProfile'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -35,6 +36,7 @@ function App() {
   const navigate = useNavigate()
   const [user, setUser] = useState(authService.getUser())
   const [potlucks, setPotlucks] = useState([])
+  // const [profiles, setProfiles] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -57,6 +59,12 @@ function App() {
     setPotlucks(potlucks.map((p) => potluckData._id === p._id ? updatedPotluck : p))
     navigate('/potlucks')
   }
+
+  // const handleUpdateProfile = async (profileData) => {
+  //   const updatedProfile = await profileService.update(profileData)
+  //   setProfiles(profiles.map((p) => profileData._id === p._id ? updatedProfile : p))
+  //   navigate('/profiles')
+  // }
 
   const handleDeletePotluck = async (id) => {
     const deletedPotluck = await potluckService.deletePotluck(id)
@@ -97,6 +105,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <ProfileDetails user={user} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profiles/:id/edit"
+          element={
+            <ProtectedRoute user={user}>
+              <EditProfile user={user} />
             </ProtectedRoute>
           }
         />
