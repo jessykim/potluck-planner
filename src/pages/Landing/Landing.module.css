@@ -9,8 +9,9 @@ main {
 }
 
 .cardImg {
-  width: 120px;
-  height: 120px;
+  width: fit-content;
+  border-radius: 10px;
+  height: 80%;
 }
 
 .cards {
@@ -29,7 +30,9 @@ main {
   height: 180px;
   margin-bottom: 10px;
   background-color: #FFFF;
-  border: 0.5px solid black;
+  /* border: 0.5px solid black; */
+  box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
+  -moz-box-shadow: -1px 5px 19px -5px rgba(0,0,0,0.25);
 }
 
 p {
@@ -38,4 +41,9 @@ p {
 
 h1 {
   text-align: center;
+}
+
+.cards > a:hover {
+  animation: pulse;
+  animation-duration: 2s;
 }
