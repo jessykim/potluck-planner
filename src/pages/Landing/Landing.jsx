@@ -6,9 +6,9 @@ const Landing = ({user}) => {
     <>
       <main>
         {user ? 
-        <h1>Hello, {user.name}!</h1>
+        <h1 className="animate__animated animate__bounce">Hello, {user.name}!</h1>
         :
-        <h1>Welcome to Potluck Planner!</h1>
+        <h1 className="animate__animated animate__bounce">Welcome to Potluck Planner!</h1>
         }
         <div className={styles.cards}>
           <Link to="/potlucks/add">
