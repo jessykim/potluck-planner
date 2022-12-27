@@ -1,6 +1,12 @@
 import { NavLink } from "react-router-dom"
 import styles from './NavBar.module.css'
 
+import { BiHomeSmile } from 'react-icons/bi'
+import { FiUsers } from 'react-icons/fi'
+import { BsCalendarWeek } from 'react-icons/bs'
+import { GrAdd } from 'react-icons/gr'
+import { MdOutlineLogout } from 'react-icons/md'
+
 const NavBar = ({ user, handleLogout }) => {
   const publicLinks = (
     <>
@@ -11,12 +17,11 @@ const NavBar = ({ user, handleLogout }) => {
 
   const protectedLinks = (
     <>
-      {/* <NavLink to="/changePassword" onClick={handleLogout}>Change Password</NavLink> */}
-      <NavLink to="/">home</NavLink>
-      <NavLink to="/profiles">profiles</NavLink>
-      <NavLink to="/potlucks">potlucks</NavLink>
-      <NavLink to="/potlucks/add">+ add</NavLink>
-      <NavLink to="/logout" onClick={handleLogout}>LOG OUT</NavLink>
+      <NavLink to="/"><BiHomeSmile /></NavLink>
+      <NavLink to="/profiles"><FiUsers /></NavLink>
+      <NavLink to="/potlucks"><BsCalendarWeek /></NavLink>
+      <NavLink to="/potlucks/add"><GrAdd /></NavLink>
+      <NavLink to="/logout" onClick={handleLogout}><MdOutlineLogout /></NavLink>
     </>
   )
 
