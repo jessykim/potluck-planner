@@ -12,10 +12,12 @@ const Landing = ({user}) => {
         }
         <div className={styles.cards}>
           <Link to="/potlucks/add">
-            plan your next potluck
+            <img src="./planpotluck.jpg" alt="girl planning event" className={styles.cardImg} />
+            <p>plan your next potluck</p>
           </Link>
           <Link to="/potlucks">
-            your collection of potlucks
+            <img src="./potlucks.jpg" alt="potluck event" className={styles.cardImg} />
+            <p>your collection of potlucks</p>
           </Link>
         </div>
       </main>
