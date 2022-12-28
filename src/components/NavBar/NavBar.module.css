@@ -27,3 +27,8 @@ div > a {
   /* background-color:#006D77; */
 }
 
+div > a:hover {
+  color: black;
+  cursor: pointer;
+}
+

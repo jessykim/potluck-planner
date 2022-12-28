@@ -27,7 +27,6 @@ const NavBar = ({ user, handleLogout }) => {
 
   return (
     <nav className={styles.container}>
-      {/* <NavLink to={'/'}></NavLink> */}
       <div className={styles.navdiv}>
         {user ? protectedLinks : publicLinks}
       </div>

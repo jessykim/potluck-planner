@@ -45,6 +45,7 @@ const SignupForm = props => {
   return (
     <>
       <main className={styles.container}>
+      <h1>SIGN UP</h1>
         <form
           autoComplete="off"
           onSubmit={handleSubmit}
