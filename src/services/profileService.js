@@ -24,7 +24,7 @@ const show = async (id) => {
   }
 }
 
-async function addPhoto(photoData, profileId) {
+async function addPhoto (photoData, profileId) {
   const res = await fetch(`${BASE_URL}/${profileId}/add-photo`, {
     method: 'PUT',
     headers: {
@@ -51,9 +51,27 @@ const update = async (id, profileData) => {
   }
 }
 
+// const updatePhoto = async (id, photoData) => {
+//   console.log('photoData', photoData)
+//   try {
+//     const res = await fetch(`${BASE_URL}/${id}/update-photo`, {
+//       method: 'PUT',
+//       headers: {
+//         'Authorization': `Bearer ${tokenService.getToken()}`,
+//         // 'Content-Type': 'application/json'
+//       },
+//       body: photoData
+//     })
+//     return await res.json()
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+
 export { 
   show,
   index,
   addPhoto,
-  update
+  update,
+  // updatePhoto
 }

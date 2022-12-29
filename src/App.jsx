@@ -19,6 +19,7 @@ import EditDrink from './pages/EditDrink/EditDrink'
 import EditItem from './pages/EditItem/EditItem'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import EditProfile from './pages/EditProfile/EditProfile'
+// import EditPhoto from './pages/EditPhoto/EditPhoto'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -36,6 +37,7 @@ function App() {
   const navigate = useNavigate()
   const [user, setUser] = useState(authService.getUser())
   const [potlucks, setPotlucks] = useState([])
+  const [photoData, setPhotoData] = useState({})
   // const [profiles, setProfiles] = useState([])
 
   const handleLogout = () => {
@@ -60,10 +62,12 @@ function App() {
     navigate('/potlucks')
   }
 
-  // const handleUpdateProfile = async (profileData) => {
-  //   const updatedProfile = await profileService.update(profileData)
-  //   setProfiles(profiles.map((p) => profileData._id === p._id ? updatedProfile : p))
-  //   navigate('/profiles')
+  const handleChangePhoto = (evt) => {
+    setPhotoData({ photo: evt.target.files[0] })
+  }
+
+  // const handleUpdatePhoto = async (evt) => {
+  //   setPhotoData({ photo: evt.target.files[0] })
   // }
 
   const handleDeletePotluck = async (id) => {
@@ -85,7 +89,7 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route path="/signup" element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
+        <Route path="/signup" element={<Signup handleSignupOrLogin={handleSignupOrLogin} handleChangePhoto={handleChangePhoto} photoData={photoData} />} />
         <Route path="/login" element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
         <Route path="/logout" element={<Logout handleSignupOrLogin={handleSignupOrLogin} />} />
         <Route
@@ -112,10 +116,18 @@ function App() {
           path="/profiles/:id/edit"
           element={
             <ProtectedRoute user={user}>
-              <EditProfile user={user} />
+              <EditProfile user={user} photoData={photoData} setPhotoData={setPhotoData} />
             </ProtectedRoute>
           }
         />
+        {/* <Route
+          path="/profiles/:id/edit/update-photo"
+          element={
+            <ProtectedRoute user={user}>
+              <EditPhoto user={user} photoData={photoData} setPhotoData={setPhotoData} handleUpdatePhoto={handleUpdatePhoto} />
+            </ProtectedRoute>
+          }
+        /> */}
         <Route 
           path="/potlucks/add"
           element={<AddPotluck handleAddPotluck={handleAddPotluck} />}
