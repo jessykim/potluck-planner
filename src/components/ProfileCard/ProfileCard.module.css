@@ -17,7 +17,7 @@ a {
 }
 
 #profileImg {
-  width: 60px;
+  width: fit-content;
   height: 60px;
   border-radius: 100px;
 }
@@ -28,7 +28,7 @@ svg {
 }
 
 .container > div {
-  border: 0.5px solid;
+  /* border: 0.5px solid; */
   border-radius: 100px;
   width: 60px;
   height: 60px;

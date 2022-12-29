@@ -7,7 +7,7 @@ const ProfileCard = ({ profile }) => {
     <>
       <Link to={`/profiles/${profile._id}`}>
         <article className={styles.container}>
-          {profile.photo ? <img src={profile.photo} alt="profile" id={styles.profileImg} /> : <div><CiUser /></div>}
+          {profile.photo ? <div><img src={profile.photo} alt="profile" id={styles.profileImg} /></div> : <div><CiUser /></div>}
             <h1 className={styles.username}>{profile.name}</h1>    
         </article>
       </Link>
