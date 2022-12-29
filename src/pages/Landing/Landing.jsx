@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom"
 import styles from './Landing.module.css'
 
+import { GiCookingPot } from 'react-icons/gi'
+import { GrPlan } from 'react-icons/gr'
+import { FaUtensilSpoon } from 'react-icons/fa'
+
 const Landing = ({user}) => {
   return (
     <>
       <main>
+        <div className={styles.icons}>
+          <GrPlan />
+          <GiCookingPot />
+          <FaUtensilSpoon />
+        </div>
         {user ? 
         <>
-          <h1 className="animate__animated animate__bounce">Hello, {user.name}!</h1>
+          <h1 className="animate__animated animate__bounce">Welcome to Potluck Planner, {user.name}!</h1>
           <div className={styles.cards}>
             <Link to="/potlucks/add">
               <img src="./planpotluck.jpg" alt="girl planning event" className={styles.cardImg} />

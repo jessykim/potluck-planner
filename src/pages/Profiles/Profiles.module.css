@@ -5,3 +5,12 @@
   padding: 21px;
   grid-template-columns: repeat(1, 1fr);
 }
+
+.icons {
+  display: flex;
+  justify-self: center;
+}
+
+.icons > svg {
+  margin: 8px;
+}

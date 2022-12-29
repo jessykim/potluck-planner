@@ -8,6 +8,16 @@ main {
   /* background-color: #EAE1DF; */
 }
 
+.icons {
+  display: flex;
+  justify-self: center;
+  margin-bottom: 14px;
+}
+
+.icons > svg {
+  margin: 8px;
+}
+
 .cardImg {
   width: fit-content;
   border-radius: 10px;
