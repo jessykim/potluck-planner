@@ -10,6 +10,7 @@ form {
   border: 2px solid #E29578;
   border-radius: 10px;
   margin: 8px;
+  font-family: 'Palanquin', sans-serif;
 }
 
 .container input { 
