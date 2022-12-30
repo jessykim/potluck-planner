@@ -11,17 +11,21 @@ const PotluckList = ({ potlucks }) => {
   })
 
   return (
-    <main className={styles.container}>
-      <div className={styles.icons}>
-        <GiPartyFlags />
-        <FaUtensils />
-        <GiPartyPopper />
-      </div>
-      <h1>Potlucks</h1>
-      {potlucks.map((potluck) => (
-        <PotluckCard key={potluck._id} potluck={potluck} />
-      ))}
-    </main>
+    <>
+      <header className={styles.potlucksHeader}>
+        <div className={styles.icons}>
+          <GiPartyFlags />
+          <FaUtensils />
+          <GiPartyPopper />
+        </div>
+        <h1>Potlucks</h1>
+      </header>
+      <main className={styles.container}>
+        {potlucks.map((potluck) => (
+          <PotluckCard key={potluck._id} potluck={potluck} />
+        ))}
+      </main>
+    </>
   )
 }
 
