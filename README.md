@@ -32,6 +32,7 @@ This side project was inspired by and built for my sister/friend, Rina, who enjo
   - React
 
 ## Credits
+- [Animate](https://animate.style/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Favicon.io](https://favicon.io/)
 - [Freepik](https://www.freepik.com/)
@@ -43,3 +44,4 @@ This side project was inspired by and built for my sister/friend, Rina, who enjo
   - [ ] Implement a friend request feature
   - [ ] List potlucks, hosted by the user, on their profile details page
   - [ ] Create a blog page where recipes can be shared
+  - [ ] Change dietary preferences/restrictions from a select list to checkboxes
