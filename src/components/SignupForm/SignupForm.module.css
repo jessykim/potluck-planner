@@ -35,3 +35,21 @@ form {
   width: 100%;
   margin-bottom: 8px;
 }
+
+@media only screen and (min-width: 900px) {
+  .container {
+    padding: 30px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    padding: 40px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .container {
+    padding: 60px;
+  }
+}
