@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Potluck Planner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## LINK BELOW 👇🏼
+## [Potluck Planner](TBD) 
 
-## Available Scripts
+## Background & Description
+🥘 Welcome to **Potluck Planner**! 🥘<br /> 
+Here to help host your next potluck party!
 
-In the project directory, you can run:
+This side project was inspired by and built for my sister/friend, Rina, who enjoys hosting potluck parties in her home and was interested in using another planning tool outside of Google spreadsheets. I thought this would be a good opportunity for me to build another full-stack application using the MERN stack and become more familiar with using React.
 
-### `npm start`
+## Screenshots of the App 📸
+<!-- ![Home Page](./public/images/home%20page.png)
+![Run Info](./public/images/run2.png)<br />
+![Home Page Mobile](./public/images/homepagemobile.PNG)
+![Create a Run](./public/images/createrun.PNG)
+![Scheduled Run and Players](./public/images/run.PNG)
+![All Runs](./public/images/allruns.PNG)
+![User Profile](./public/images/userprofile.PNG)
+![User Game Stats](./public/images/gamestats.PNG) -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Used
+  - AJAX
+  - CSS
+  - Express
+  - Git/GitHub
+  - HTML
+  - JavaScript
+  - JSON Web Token
+  - Mongoose/MongoDB
+  - Node
+  - React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Credits
+- [Bootstrap](https://getbootstrap.com/)
+- [Favicon.io](https://favicon.io/)
+- [Freepik](https://www.freepik.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [React Icons](https://react-icons.github.io/react-icons)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Icebox Items 🧊
+  - [ ] Add back button icons to easily go back to the previous page
+  - [ ] Implement a friend request feature
+  - [ ] List potlucks, hosted by the user, on their profile details page
+  - [ ] Create a blog page where recipes can be shared
