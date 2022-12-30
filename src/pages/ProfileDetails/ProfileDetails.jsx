@@ -27,7 +27,7 @@ const ProfileDetails = (props) => {
     <main className={styles.container}>
       <article>
         <header className={styles.profileHeader}>
-          {profile.photo ? <div><img src={profile.photo} alt="profile" /></div> : <div><CiUser /></div>}
+          {profile.photo ? <div><img src={profile.photo} alt="profile" /></div> : <div id={styles.icon}><CiUser /></div>}
           <h1 className={styles.username}>{profile.name}</h1>
         </header>
       </article>
