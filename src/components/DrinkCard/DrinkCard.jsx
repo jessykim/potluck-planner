@@ -7,9 +7,9 @@ const DrinkCard = ({ drink, user, potluckId, handleDeleteDrink }) => {
       <p>{drink.provider.name}</p>
       <p>Bringing: {drink.name}</p>
       {drink.alcoholic ?
-        <p>ALCOHOLIC</p>
+        <p>*Alcoholic</p>
         :
-        <p>NON-ALCOHOLIC</p>
+        <p>*Non-Alcoholic</p>
       }
       {drink.quantity ? <p>Quantity: {drink.quantity}</p> : ""}
       {drink.notes ? <p>{drink.notes}</p> : ""}

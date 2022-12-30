@@ -3,7 +3,7 @@ import DrinkCard from '../DrinkCard/DrinkCard'
 const DrinkList = (props) => {
   if (props.drinks.length < 1) {
     return (
-      <h1>No Drinks</h1>
+      <h1>No Drinks Added</h1>
     )
   }
   return (

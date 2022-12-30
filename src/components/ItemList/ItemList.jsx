@@ -3,7 +3,7 @@ import ItemCard from "../ItemCard/ItemCard"
 const ItemList = (props) => {
   if (props.items.length < 1) {
     return (
-      <h1>No Items</h1>
+      <h1>No Items Added</h1>
     )
   }
   return (
