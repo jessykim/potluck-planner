@@ -20,13 +20,15 @@ const Profiles = () => {
 
   return (
     <>
-      <main className={styles.container}>
+      <header className={styles.profilesHeader}>
         <div className={styles.icons}>
           <RiUserSmileLine />
           <GiThreeFriends />
           <BiHomeHeart />
         </div>
         <h1>Potluckers</h1>
+      </header>
+      <main className={styles.container}>
         {profiles.length ? 
           <>
             {profiles.map((profile) =>

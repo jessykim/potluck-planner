@@ -59,3 +59,21 @@ section {
 p > button {
   margin-right: 8px;
 }
+
+@media only screen and (min-width: 900px) {
+  #accordion {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #accordion {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  #accordion {
+    width: 70%;
+  }
+}
