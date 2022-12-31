@@ -45,3 +45,4 @@ This side project was inspired by and built for my sister/friend, Rina, who enjo
   - [ ] List potlucks, hosted by the user, on their profile details page
   - [ ] Create a blog page where recipes can be shared
   - [ ] Change dietary preferences/restrictions from a select list to checkboxes
+  - [ ] Add a feature where users can update/remove their profile photos
