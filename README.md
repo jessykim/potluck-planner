@@ -15,8 +15,8 @@ This side project was inspired by and built for my sister/friend, Rina, who enjo
 ![Profiles List](./public/screenshots/profiles.png)
 ![Potlucks List](./public/screenshots/potlucks.png)
 ![Potluck Form](./public/screenshots/form.png)
-![Potluck Information](./public/screenshots/potluck.png)
 ![Potluck Details](./public/screenshots/potluckdetails.png)
+![Potluck Information](./public/screenshots/potluck.png)
 
 ## Technology Used
   - AJAX
