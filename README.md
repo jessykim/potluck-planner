@@ -7,18 +7,18 @@
 🥘 Welcome to **Potluck Planner**! 🥘<br /> 
 Here to help host your next potluck party!
 
-This side project was inspired by and built for my sister/friend, Rina, who enjoys hosting potluck parties in her home and was interested in using another planning tool outside of Google spreadsheets. I thought this would be a good opportunity for me to build another full-stack application using the MERN stack and become more familiar with using React.
+This side project was inspired by and built for my friend, Rina, who enjoys hosting potluck parties in her home and was interested in using another planning tool outside of Google spreadsheets. I thought this would be a good opportunity for me to build another full-stack application using the MERN stack and become more familiar with using React.
 
 ## Screenshots of the App 📸
 ![Landing Page](./public/screenshots/landing.png)
 ![Home Page](./public/screenshots/home.png)<br />
-![Profiles List](./public/screenshots/profiles.png | width=250)
-![Profile Details](./public/screenshots/profile.png | width=250)
-![Potlucks List](./public/screenshots/potlucks.png | width=250)
-![Potluck Form](./public/screenshots/form.png | width=250)
-![Potluck Details](./public/screenshots/potluckdetails.png | width=250)
-![Potluck Information](./public/screenshots/potluck.png | width=250)
-![Logout](./public/screenshots/logout.png | width=250)
+![Profiles List](./public/screenshots/profiles.png)
+![Profile Details](./public/screenshots/profile.png)
+![Potlucks List](./public/screenshots/potlucks.png)
+![Potluck Form](./public/screenshots/form.png)
+![Potluck Details](./public/screenshots/potluckdetails.png)
+![Potluck Information](./public/screenshots/potluck.png)
+![Logout](./public/screenshots/logout.png)
 
 ## Technology Used
   - AJAX
