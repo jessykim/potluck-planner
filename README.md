@@ -12,13 +12,13 @@ This side project was inspired by and built for my sister/friend, Rina, who enjo
 ## Screenshots of the App 📸
 ![Landing Page](./public/screenshots/landing.png)
 ![Home Page](./public/screenshots/home.png)<br />
-![Profiles List](./public/screenshots/profiles.png)
-![Profile Details](./public/screenshots/profile.png)
-![Potlucks List](./public/screenshots/potlucks.png)
-![Potluck Form](./public/screenshots/form.png)
-![Potluck Details](./public/screenshots/potluckdetails.png)
-![Potluck Information](./public/screenshots/potluck.png)
-![Logout](./public/screenshots/logout.png)
+![Profiles List](./public/screenshots/profiles.png | width=250)
+![Profile Details](./public/screenshots/profile.png | width=250)
+![Potlucks List](./public/screenshots/potlucks.png | width=250)
+![Potluck Form](./public/screenshots/form.png | width=250)
+![Potluck Details](./public/screenshots/potluckdetails.png | width=250)
+![Potluck Information](./public/screenshots/potluck.png | width=250)
+![Logout](./public/screenshots/logout.png | width=250)
 
 ## Technology Used
   - AJAX
