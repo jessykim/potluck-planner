@@ -13,10 +13,12 @@ This side project was inspired by and built for my sister/friend, Rina, who enjo
 ![Landing Page](./public/screenshots/landing.png)
 ![Home Page](./public/screenshots/home.png)<br />
 ![Profiles List](./public/screenshots/profiles.png)
+![Profile Details](./public/screenshots/profile.png)
 ![Potlucks List](./public/screenshots/potlucks.png)
 ![Potluck Form](./public/screenshots/form.png)
 ![Potluck Details](./public/screenshots/potluckdetails.png)
 ![Potluck Information](./public/screenshots/potluck.png)
+![Logout](./public/screenshots/logout.png)
 
 ## Technology Used
   - AJAX
