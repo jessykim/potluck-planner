@@ -16,19 +16,13 @@ a {
   align-items: center;
 }
 
-#profileImg {
-  width: fit-content;
-  height: 60px;
-  border-radius: 100px;
-}
-
 svg {
   height: 20px;
   width: 20px;
 }
 
 .container > div {
-  border-radius: 100px;
+  border-radius: 50%;
   width: 60px;
   height: 60px;
   display: flex;
@@ -38,4 +32,9 @@ svg {
 
 .username {
   padding-left: 15px;
+}
+
+div > #profileImg {
+  height: 60px;
+  width: 60px;
 }
