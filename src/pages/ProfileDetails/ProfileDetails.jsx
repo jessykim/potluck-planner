@@ -34,7 +34,6 @@ const ProfileDetails = (props) => {
       {profile._id === props.user.profile &&
         <div className={styles.btns}>
           <Link to={`/profiles/${id}/edit`} state={profile}><button>Edit</button></Link>
-          {/* <Link to={`/profiles/${id}/edit/update-photo`}><button>Update Photo</button></Link> */}
           <Link to={`/changePassword`}><button>Change Password</button></Link>
           {/* <button onClick={() => props.handleDeleteProfile(id)}>Delete</button> */}
         </div>

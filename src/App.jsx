@@ -19,7 +19,6 @@ import EditDrink from './pages/EditDrink/EditDrink'
 import EditItem from './pages/EditItem/EditItem'
 import ProfileDetails from './pages/ProfileDetails/ProfileDetails'
 import EditProfile from './pages/EditProfile/EditProfile'
-// import EditPhoto from './pages/EditPhoto/EditPhoto'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -66,9 +65,9 @@ function App() {
     setPhotoData({ photo: evt.target.files[0] })
   }
 
-  // const handleUpdatePhoto = async (evt) => {
-  //   setPhotoData({ photo: evt.target.files[0] })
-  // }
+  const handleUpdatePhoto = async (evt) => {
+    setPhotoData({ photo: evt.target.files[0] })
+  }
 
   const handleDeletePotluck = async (id) => {
     const deletedPotluck = await potluckService.deletePotluck(id)
@@ -116,18 +115,10 @@ function App() {
           path="/profiles/:id/edit"
           element={
             <ProtectedRoute user={user}>
-              <EditProfile user={user} photoData={photoData} setPhotoData={setPhotoData} />
+              <EditProfile user={user} photoData={photoData} setPhotoData={setPhotoData} handleChangePhoto={handleChangePhoto}/>
             </ProtectedRoute>
           }
         />
-        {/* <Route
-          path="/profiles/:id/edit/update-photo"
-          element={
-            <ProtectedRoute user={user}>
-              <EditPhoto user={user} photoData={photoData} setPhotoData={setPhotoData} handleUpdatePhoto={handleUpdatePhoto} />
-            </ProtectedRoute>
-          }
-        /> */}
         <Route 
           path="/potlucks/add"
           element={<AddPotluck handleAddPotluck={handleAddPotluck} />}
