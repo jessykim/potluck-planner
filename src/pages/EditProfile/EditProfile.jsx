@@ -3,8 +3,9 @@ import { useLocation, useParams, useNavigate } from "react-router-dom"
 import styles from './EditProfile.module.css'
 
 import * as profileService from '../../services/profileService'
+import EditProfileForm from "../../components/EditProfileForm/EditProfileForm"
 
-const EditProfile = ({ user, photoData, setPhotoData }) => {
+const EditProfile = ({ user, photoData, setPhotoData, handleChangePhoto }) => {
   const navigate = useNavigate()
   const { state } = useLocation()
   const { id } = useParams()
@@ -21,19 +22,8 @@ const EditProfile = ({ user, photoData, setPhotoData }) => {
     setProfileForm({ ...profileForm, [target.name]: target.value })
   }
 
-  // const handleUpdatePhoto = async (evt) => {
-  //   setPhotoData({ photo: evt.target.files[0] })
-  //   console.log(photoData)
-  // }
-
-  // const handleChangePhoto = ({ target }) => {
-  //   setProfileForm({ ...profileForm}, [target.name]: target.value)
-  //   console.log(...profileForm)
-  // }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // await profileService.updatePhoto(id, photoData)
     await profileService.update(id, profileForm)
     navigate(`/profiles/${id}`)
   }
@@ -108,6 +98,7 @@ const EditProfile = ({ user, photoData, setPhotoData }) => {
           </button>
         </form>
       </main>
+      <EditProfileForm user={user} setPhotoData={setPhotoData} photoData={photoData} handleChangePhoto={handleChangePhoto}/>
     </>
   )
 }

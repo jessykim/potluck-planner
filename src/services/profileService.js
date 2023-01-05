@@ -35,7 +35,7 @@ async function addPhoto (photoData, profileId) {
   return await res.json()
 }
 
-const update = async (id, profileData) => {
+const update = async (id, profileData, photo) => {
   try {
     const res = await fetch(`${BASE_URL}/${id}`, {
       method: 'PUT',
@@ -45,33 +45,26 @@ const update = async (id, profileData) => {
       },
       body: JSON.stringify(profileData)
     })
-    return res.json()
+    const json = await res.json()
+    if (json.err){
+      throw new Error(json.err)
+    } else if (photo) {
+      const photoData = new FormData()
+      photoData.append('photo',photo)
+      return await addPhoto(
+        photoData,
+        tokenService.getUserFromToken().profile
+      )
+    }
+    return json
   } catch (error) {
     console.log(error)
   }
 }
 
-// const updatePhoto = async (id, photoData) => {
-//   console.log('photoData', photoData)
-//   try {
-//     const res = await fetch(`${BASE_URL}/${id}/update-photo`, {
-//       method: 'PUT',
-//       headers: {
-//         'Authorization': `Bearer ${tokenService.getToken()}`,
-//         // 'Content-Type': 'application/json'
-//       },
-//       body: photoData
-//     })
-//     return await res.json()
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
-
 export { 
   show,
   index,
   addPhoto,
-  update,
-  // updatePhoto
+  update
 }
